@@ -16,7 +16,7 @@ $url = 'http://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work/tra
  */
 class Htmlbody
 {
-    function __construct ($url)
+    public function __construct($url)
     {
         $html = file_get_contents($url);
         return $html;
@@ -31,40 +31,12 @@ class Htmlbody
  */
 class getDom
 {
-    function __construct ()
+    public function __construct()
     {
         $domDoc = new DOMDocument();
         @$domDoc->loadHTML($html);
         $xPath = new DOMXpath($domDoc);
         return $xPath;
-    }
-}
-
-/**
- * xpathオブジェクトから目的のDomを得る 
- *
- * @return object $purposeDom
- */
-class GetDomFromXpathDom
-{
-    function __construct ()
-    {
-        $purposeDom = $xpath->query($query);
-        return $purposeDom;
-    }
-}
-/**
-* Domから分割された単語を得る
-* 
-* @return array 
- */
-class GetDividedWordFromDom
-{
-    function __construct ()
-    {
-        foreach ($baz_list as $item) {
-             $text[] = $item->nodeValue;
-        }
     }
 }
 /**
@@ -74,10 +46,41 @@ class GetDividedWordFromDom
  */
 class FeedQueryUseByXpath
 {
-    function __construct ($query)
+    public function __construct($query)
     {
         return $query;
     }
 }
 
 
+/**
+ * xpathオブジェクトから目的のDomを得る 
+ * 
+ * @param object $xPathObj 
+ * @return object $purposeDom
+ */
+class GetDomFromXpathDom
+{
+    public function __construct($xPathObj)
+    {
+        $purposeDom = $xPathObj->query($query);
+        return $purposeDom;
+    }
+}
+
+/**
+* Domから分割された単語を得る
+* 
+* @return array 
+ */
+class GetDividedWordFromDom
+{
+    public function __construct($purposeDom)
+    {
+        $dividedWordArray = array();
+        foreach ($purposeDom as $item) {
+            $dividedWordArray = array_merge(
+                $dividedWordArray, preg_split("/[\s+]/", $item->nodeValue));
+        }
+    }
+}
