@@ -74,7 +74,7 @@ class GetDomFromXpathDom
  * @param string $query 
  * 
  */
-class compile
+class CompileClass
 {
     private $url;
     private $htmlBody;
@@ -109,3 +109,6 @@ class GetDividedWordFromDom
         return $dividedWordArray;
     }
 }
+
+$wordArray = new GetDividedWordFromDom(new CompileClass($url,$query));
+var_dump($wordArray);
