@@ -5,9 +5,9 @@
 //$db = new SQLite3("sqlitedb.db");
 //$db->exec('CREATE TABLE words(id integer PRIMARY KEY AUTOINCREMENT, words text, trans text, frequency interger) ');
 
+
 $query = 'body//div[@class="talk-article__body talk-transcript__body"]//span';
 $url = 'http://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work/transcript?language=en';
-
 /**
  * 指定したurlのhtmlを返す
  *
@@ -147,9 +147,11 @@ class GetDividedWordFromDom
         
         $this->dom = new CompileClass($url, $query);
         $dividedWordArray = array();
-        foreach ($this->dom->dom as $item) {
+        foreach ($this->dom->dom->purposeDom as $item) {
             $dividedWordArray = array_merge(
-                $dividedWordArray, preg_split("/[\s+.]/", $item->nodeValue));
+                $dividedWordArray,
+                preg_split("/[\s+.,]/", $item->nodeValue)
+            );
         }
         $this->words = $dividedWordArray;
     }
