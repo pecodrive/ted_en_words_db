@@ -117,14 +117,18 @@ class CompileClass
     private $query;
     private $htmlBodyObj;
     private $xPathObj;
+    private $dom;
     public function __construct($url,$query)
     {
-        $this->url = $url;
-        $this->query = $query;
-
-        $this->htmlBodyObj = new Htmlbody($this->url);
-        $this->xPathObj = new GetDom($this->htmlBodyObj);
-        return new GetDomFromXpathDom($this->xPathObj, $this->query);
+        $this->url           = $url;
+        $this->query         = $query;
+        $this->htmlBodyObj   = new Htmlbody($this->url);
+        $this->xPathObj      = new GetDom($this->htmlBodyObj->html);
+        $this->dom           = new GetDomFromXpathDom($this->xPathObj->xPathObj, $this->query);
+    }
+    public function __get($name)
+    {
+        return $this->$name;
     }
         
 } 
@@ -136,21 +140,24 @@ class CompileClass
 */
 class GetDividedWordFromDom
 {
-    public function __construct($purposeDom)
+    private $dom;
+    private $words;
+    public function __construct($url, $query)
     {
+        
+        $this->dom = new CompileClass($url, $query);
         $dividedWordArray = array();
-        foreach ($purposeDom as $item) {
+        foreach ($this->dom->dom as $item) {
             $dividedWordArray = array_merge(
-                $dividedWordArray, preg_split("/[\s+]/", $item->nodeValue));
+                $dividedWordArray, preg_split("/[\s+.]/", $item->nodeValue));
         }
-        return $dividedWordArray;
+        $this->words = $dividedWordArray;
+    }
+    public function getWords()
+    {
+        return $this->words;
     }
 }
 
-//$wordArray = new GetDividedWordFromDom(new CompileClass($url,$query));
-//$testobj = new HtmlBody($url);
-$obj = new HtmlBody($url);
-//var_dump($obj);
-$testobj = new GetDom($obj->html);
-var_dump($testobj);
-//var_dump($wordArray);
+$wordArray = new GetDividedWordFromDom($url, $query);
+var_dump($wordArray->getWords());
