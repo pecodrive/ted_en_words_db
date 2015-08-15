@@ -31,7 +31,7 @@ class Htmlbody
  */
 class getDom
 {
-    public function __construct()
+    public function __construct($html)
     {
         $domDoc = new DOMDocument();
         @$domDoc->loadHTML($html);
@@ -67,12 +67,36 @@ class GetDomFromXpathDom
         return $purposeDom;
     }
 }
-
+/**
+ * 処理をまとめる
+ * 
+ * @param string $url
+ * @param string $query 
+ * 
+ */
+class compile
+{
+    private $url;
+    private $htmlBody;
+    private $query;
+    private $xPath;
+    private $dom;
+    public function __construct($url,$query)
+    {
+        $this->url = $url;
+        $this->htmlBody = new Htmlbody($this->url);
+        $this->query = new FeedQueryUseByXpath($query);
+        $this->xPath = new GetDom($this->query);
+        return new GetDomFromXpathDom($this->xPath);
+    }
+        
+} 
 /**
 * Domから分割された単語を得る
-* 
-* @return array 
- */
+*
+* @param object $purposeDom 
+* @return array $dividedWordArray 
+*/
 class GetDividedWordFromDom
 {
     public function __construct($purposeDom)
@@ -82,5 +106,6 @@ class GetDividedWordFromDom
             $dividedWordArray = array_merge(
                 $dividedWordArray, preg_split("/[\s+]/", $item->nodeValue));
         }
+        return $dividedWordArray;
     }
 }
