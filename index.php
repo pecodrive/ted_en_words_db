@@ -14,12 +14,16 @@ $url = 'http://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work/tra
  * @param string $url
  * @return string $html 
  */
-class Htmlbody
+class HtmlBody
 {
+    private $html;
     public function __construct($url)
     {
-        $html = file_get_contents($url);
-        return $html;
+        $this->html = file_get_contents($url);
+    }
+    public function __get($name)
+    {
+        return $this->$name;
     }
 }
 
@@ -31,14 +35,37 @@ class Htmlbody
  */
 class getDom
 {
+    private $xPathObj;
     public function __construct($html)
     {
         $domDoc = new DOMDocument();
         @$domDoc->loadHTML($html);
-        $xPath = new DOMXpath($domDoc);
-        return $xPath;
+        $this->xPathObj = new DOMXpath($domDoc);
+    }
+    public function __get($url)
+    {
+        return $this->xPathObj;
     }
 }
+/**
+ * Htmlbody用のクエリを渡す
+ *
+ * @param string $url
+ */
+class FeedUrlUseByHtmlBody
+{
+    private $url;
+    public function __construct($url)
+    {
+        $this->url = $url;
+    }
+    public function __get($name)
+    {
+        return $this->$name;
+    }
+}
+
+
 /**
  * xpath用のクエリを渡す
  *
@@ -46,9 +73,14 @@ class getDom
  */
 class FeedQueryUseByXpath
 {
+    private $query;
     public function __construct($query)
     {
-        return $query;
+        $this->query = $query;
+    }
+    public function __get($name)
+    {
+        return $this->$name;
     }
 }
 
@@ -61,10 +93,15 @@ class FeedQueryUseByXpath
  */
 class GetDomFromXpathDom
 {
-    public function __construct($xPathObj)
+    private $purposeDom;
+    public function __construct($xPathObj, $query)
     {
-        $purposeDom = $xPathObj->query($query);
-        return $purposeDom;
+        $this->purposeDom = $xPathObj->query($query);
+         
+    }
+    public function __get($name)
+    {
+        return $this->$name;
     }
 }
 /**
@@ -77,17 +114,17 @@ class GetDomFromXpathDom
 class CompileClass
 {
     private $url;
-    private $htmlBody;
     private $query;
-    private $xPath;
-    private $dom;
+    private $htmlBodyObj;
+    private $xPathObj;
     public function __construct($url,$query)
     {
         $this->url = $url;
-        $this->htmlBody = new Htmlbody($this->url);
-        $this->query = new FeedQueryUseByXpath($query);
-        $this->xPath = new GetDom($this->query);
-        return new GetDomFromXpathDom($this->xPath);
+        $this->query = $query;
+
+        $this->htmlBodyObj = new Htmlbody($this->url);
+        $this->xPathObj = new GetDom($this->htmlBodyObj);
+        return new GetDomFromXpathDom($this->xPathObj, $this->query);
     }
         
 } 
@@ -110,5 +147,10 @@ class GetDividedWordFromDom
     }
 }
 
-$wordArray = new GetDividedWordFromDom(new CompileClass($url,$query));
-var_dump($wordArray);
+//$wordArray = new GetDividedWordFromDom(new CompileClass($url,$query));
+//$testobj = new HtmlBody($url);
+$obj = new HtmlBody($url);
+//var_dump($obj);
+$testobj = new GetDom($obj->html);
+var_dump($testobj);
+//var_dump($wordArray);
