@@ -10,7 +10,7 @@ class GetDomFromXpathDomTest extends PHPUnit_Framework_TestCase
     protected function setUP()
     {
         $this->data = new Data();
-        $this->htmlBody = new HtmlBody($this->url);
+        $this->htmlBody = new HtmlBody($this->data->url);
         $this->getDom = new GetDom($this->htmlBody->html);
         $this->getDomFromXpathDom = new GetDomFromXpathDom($this->getDom->xPathObj);
     }
