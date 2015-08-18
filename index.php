@@ -1,10 +1,5 @@
 <?php
 
-//phpinfo();
-//echo __FILE__;
-//$db = new SQLite3("sqlitedb.db");
-//$db->exec('CREATE TABLE words(id integer PRIMARY KEY AUTOINCREMENT, words text, trans text, frequency interger) ');
-
 
 $query = 'body//div[@class="talk-article__body talk-transcript__body"]//span';
 $url = 'http://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work/transcript?language=en';
@@ -161,5 +156,49 @@ class GetDividedWordFromDom
     }
 }
 
-$wordArray = new GetDividedWordFromDom($url, $query);
-var_dump($wordArray->getWords());
+class ClassOperatingDB
+{
+   private $dbhandle;
+   function __construct()
+    {
+        try{
+        $dbhandle = 
+            new PDO
+            (
+                'mysql:dbname=tedword;host=localhost;charset-utf8',
+                'tedworddbuser',
+                'hjk26dfg'
+            );
+
+        }catch(PDOException $e)
+        {
+            die('Error->'.$e->getMessage());
+        }
+        $this->dbhandle = $dbhandle;
+        
+    }
+   function getDbhandle()
+   {
+       return $this->dbhandle;
+   }
+}
+
+//$wordArray = new GetDividedWordFromDom($url, $query);
+//var_dump($wordArray->getWords());
+$db = new ClassOperatingDB();
+var_dump($db->getDbhandle());
+$sqlpre = 
+    $db->getDbhandle()->prepare
+    (
+        '
+        insert into
+        words(id, word, trans) 
+        values(:id, :word, :trans)
+        '
+    );
+$sqlpre->bindParam(':id',$id);
+$sqlpre->bindParam(':word',$word);
+$sqlpre->bindParam(':trans',$trans);
+$word = "pecodribe";
+$trans = "ペコドライブ";
+$sqlpre->execute();
