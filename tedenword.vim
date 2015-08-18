@@ -35,8 +35,10 @@ inoremap <Up> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <expr> <BS> neocomplete#smart_close_popup()."\"
+snoremap  a<BS>
 xmap  <Plug>(neosnippet_expand_target)
 smap  <Plug>(neosnippet_expand_or_jump)
+snoremap  a<BS>
 map  <Plug>(ctrlp)
 noremap f F
 noremap w b
@@ -95,17 +97,30 @@ noremap  ! :!
 noremap  r :bnext
 noremap  w :w
 nmap <silent> \ig <Plug>IndentGuidesToggle
-map \_s <Plug>TComment_\_s
-map \_n <Plug>TComment_\_n
-map \_a <Plug>TComment_\_a
-map \_b <Plug>TComment_\_b
-map \_r <Plug>TComment_\_r
+nmap \_s <Plug>TComment_\_s
+xmap \_s <Plug>TComment_\_s
+omap \_s <Plug>TComment_\_s
+nmap \_n <Plug>TComment_\_n
+xmap \_n <Plug>TComment_\_n
+omap \_n <Plug>TComment_\_n
+nmap \_a <Plug>TComment_\_a
+xmap \_a <Plug>TComment_\_a
+omap \_a <Plug>TComment_\_a
+nmap \_b <Plug>TComment_\_b
+xmap \_b <Plug>TComment_\_b
+omap \_b <Plug>TComment_\_b
+nmap \_r <Plug>TComment_\_r
+xmap \_r <Plug>TComment_\_r
+omap \_r <Plug>TComment_\_r
 xmap \_i <Plug>TComment_\_i
-map \_  <Plug>TComment_\_ 
-map \_p <Plug>TComment_\_p
+nmap \_  <Plug>TComment_\_ 
+xmap \_  <Plug>TComment_\_ 
+omap \_  <Plug>TComment_\_ 
+nmap \_p <Plug>TComment_\_p
+xmap \_p <Plug>TComment_\_p
+omap \_p <Plug>TComment_\_p
 xmap \__ <Plug>TComment_\__
 nmap \__ <Plug>TComment_\__
-smap \__ <Plug>TComment_\__
 omap \__ <Plug>TComment_\__
 nnoremap <silent> \pcf :call PhpCsFixerFixFile()
 nnoremap <silent> \pcd :call PhpCsFixerFixDirectory()
@@ -141,7 +156,9 @@ nmap <silent> gc1c <Plug>TComment_gc1c
 nmap <silent> gc1 <Plug>TComment_gc1
 nmap <silent> gc <Plug>TComment_gc
 omap ic <Plug>TComment_ic
-vmap ic <Plug>TComment_ic
+xmap ic <Plug>TComment_ic
+snoremap <Del> a<BS>
+snoremap <BS> a<BS>
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cfile>"),0)
 nnoremap <silent> <Plug>(vimshell_create) :call vimshell#create_shell(0, '')
 nnoremap <silent> <Plug>(vimshell_switch) :call vimshell#switch_shell(0, '')
@@ -267,6 +284,7 @@ inoremap jj 
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=0
+set completeopt=preview,menuone
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=ja
@@ -287,6 +305,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set noswapfile
 set tabstop=4
 set visualbell
+set window=35
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -297,12 +316,13 @@ endif
 set shortmess=aoO
 badd +1 index.php
 badd +1 classes.php
-badd +0 classoperatingdbTest.php
+badd +1 classoperatingdbTest.php
 badd +0 compilclassTest.php
 badd +0 getdividedwordfromdomTest.php
 badd +0 getdomTest.php
 badd +0 getdomfromxpathdomTest.php
 badd +0 htmlBodyTest.php
+badd +1590 ~/Documents/project/mounter/etc/php.ini
 argglobal
 silent! argdel *
 argadd index.php
@@ -315,16 +335,10 @@ argadd getdomfromxpathdomTest.php
 argadd htmlBodyTest.php
 edit index.php
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 74 + 75) / 150)
 argglobal
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
@@ -439,137 +453,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 17) / 35)
+let s:l = 207 - ((20 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+207
 normal! 0
-wincmd w
-argglobal
-edit classoperatingdbTest.php
-onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
-nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
-onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
-nnoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,:#
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-set concealcursor=niv
-setlocal concealcursor=niv
-set conceallevel=2
-setlocal conceallevel=2
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'php'
-setlocal filetype=php
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=qrocb
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
-setlocal include=\\(require\\|include\\)\\(_once\\)\\?
-setlocal includeexpr=
-setlocal indentexpr=GetPhpIndent()
-setlocal indentkeys=0{,0},0),:,!^F,o,O,e,*<Return>,=?>,=<?,=*/
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=phpcomplete#CompletePHP
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal noswapfile
-setlocal synmaxcol=3000
-if &syntax != 'php'
-setlocal syntax=php
-endif
-setlocal tabstop=4
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 17) / 35)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
-exe 'vert 2resize ' . ((&columns * 74 + 75) / 150)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

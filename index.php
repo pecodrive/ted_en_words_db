@@ -199,6 +199,9 @@ $sqlpre =
 $sqlpre->bindParam(':id',$id);
 $sqlpre->bindParam(':word',$word);
 $sqlpre->bindParam(':trans',$trans);
-$word = "pecodribe";
-$trans = "ペコドライブ";
-$sqlpre->execute();
+
+for ($i=0; $i < 238; $i++) {
+    $word = $i . "deshi";
+    $trans = $i . "番目ですぞ";
+    $sqlpre->execute();
+}
