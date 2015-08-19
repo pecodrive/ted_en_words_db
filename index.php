@@ -183,25 +183,70 @@ class ClassOperatingDB
    }
 }
 
-//$wordArray = new GetDividedWordFromDom($url, $query);
-//var_dump($wordArray->getWords());
-$db = new ClassOperatingDB();
-var_dump($db->getDbhandle());
-$sqlpre = 
-    $db->getDbhandle()->prepare
-    (
-        '
-        insert into
-        words(id, word, trans) 
-        values(:id, :word, :trans)
-        '
-    );
-$sqlpre->bindParam(':id',$id);
-$sqlpre->bindParam(':word',$word);
-$sqlpre->bindParam(':trans',$trans);
+/**
+ * データベースに英和辞典を突っ込む
+ * 
+ */
+class insertDictionary
+{
+    /**
+     * 偶数なの？ 
+     *
+     * @param integer $number 
+     * @return bool
+     */
+    static function inspectEven($number)
+    {
+        if($number === 0){
+            return false;
+            die();
+        }
+        $mod = $number % 2;
+        if($mod === 0){
+            return true;
+        }elseif($mod !== 0){
+            return false;
+        }
+    }
+    /**
+     * データベースに突っ込む役目
+     */
+    static function insertFunction()
+    {
+        $db = new ClassOperatingDB();
+        $sqlpre = 
+        $db->getDbhandle()->prepare
+        (
+            '
+            insert into
+            transwords(id, enword, transword) 
+            values(:id, :enword, :transword)
+            '
+        );
+        $sqlpre->bindParam(':id',$id);
+        $sqlpre->bindParam(':enword',$enword);
+        $sqlpre->bindParam(':transword',$transword);
 
-for ($i=0; $i < 238; $i++) {
-    $word = $i . "deshi";
-    $trans = $i . "番目ですぞ";
-    $sqlpre->execute();
+        $i = 1;
+        $handle = fopen("gene-utf8.txt", "r");
+        if ($handle){
+            while (($buffer = fgets($handle)) !== false) {
+                if (inspectEven($i)) {
+                    $transword = $buffer;
+                    $sqlpre->execute(); 
+                }else{
+                    $enword = $buffer;
+                }
+                $i++;
+            }
+            fclose($handle);
+        }
+    }
 }
+
+
+$wordArray = new GetDividedWordFromDom($url, $query);
+var_dump($wordArray->getWords());
+
+
+
