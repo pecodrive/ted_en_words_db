@@ -1,5 +1,5 @@
 <?php
-require_once('index.php');
+require_once('tedwordclass.php');
 class Data 
 {
      private $url = 

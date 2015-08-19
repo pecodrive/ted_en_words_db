@@ -2,11 +2,11 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <silent> <expr> <Plug>(neocomplete_start_unite_complete) unite#sources#neocomplete#start_complete()
-inoremap <silent> <expr> <Plug>(neocomplete_start_unite_quick_match) unite#sources#neocomplete#start_quick_match()
-inoremap <silent> <Plug>(neocomplete_start_omni_complete) 
-inoremap <silent> <Plug>(neocomplete_start_auto_complete) =neocomplete#mappings#auto_complete()=neocomplete#mappings#popup_post()
 inoremap <silent> <Plug>(neocomplete_start_manual_complete) =neocomplete#mappings#manual_complete()=neocomplete#mappings#popup_post()
+inoremap <silent> <Plug>(neocomplete_start_auto_complete) =neocomplete#mappings#auto_complete()=neocomplete#mappings#popup_post()
+inoremap <silent> <Plug>(neocomplete_start_omni_complete) 
+inoremap <silent> <expr> <Plug>(neocomplete_start_unite_quick_match) unite#sources#neocomplete#start_quick_match()
+inoremap <silent> <expr> <Plug>(neocomplete_start_unite_complete) unite#sources#neocomplete#start_complete()
 inoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
 inoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
 inoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
@@ -43,16 +43,16 @@ map  <Plug>(ctrlp)
 noremap f F
 noremap w b
 noremap e ge
-nmap  <Plug>TComment_
-nmap 1 <Plug>TComment_1
-nmap 2 <Plug>TComment_2
-nmap 3 <Plug>TComment_3
-nmap 4 <Plug>TComment_4
-nmap 5 <Plug>TComment_5
-nmap 6 <Plug>TComment_6
-nmap 7 <Plug>TComment_7
-nmap 8 <Plug>TComment_8
 nmap 9 <Plug>TComment_9
+nmap 8 <Plug>TComment_8
+nmap 7 <Plug>TComment_7
+nmap 6 <Plug>TComment_6
+nmap 5 <Plug>TComment_5
+nmap 4 <Plug>TComment_4
+nmap 3 <Plug>TComment_3
+nmap 2 <Plug>TComment_2
+nmap 1 <Plug>TComment_1
+nmap  <Plug>TComment_
 vmap 9 <Plug>TComment_9
 omap 9 <Plug>TComment_9
 vmap 8 <Plug>TComment_8
@@ -96,29 +96,29 @@ noremap  a :qa
 noremap  ! :! 
 noremap  r :bnext
 noremap  w :w
-omap \__ <Plug>TComment_\__
-nmap \__ <Plug>TComment_\__
-omap \_p <Plug>TComment_\_p
-xmap \_p <Plug>TComment_\_p
-nmap \_p <Plug>TComment_\_p
-omap \_  <Plug>TComment_\_ 
-xmap \_  <Plug>TComment_\_ 
-nmap \_  <Plug>TComment_\_ 
-omap \_r <Plug>TComment_\_r
-xmap \_r <Plug>TComment_\_r
-nmap \_r <Plug>TComment_\_r
-omap \_b <Plug>TComment_\_b
-xmap \_b <Plug>TComment_\_b
-nmap \_b <Plug>TComment_\_b
-omap \_a <Plug>TComment_\_a
-xmap \_a <Plug>TComment_\_a
-nmap \_a <Plug>TComment_\_a
-omap \_n <Plug>TComment_\_n
-xmap \_n <Plug>TComment_\_n
-nmap \_n <Plug>TComment_\_n
-omap \_s <Plug>TComment_\_s
-xmap \_s <Plug>TComment_\_s
 nmap \_s <Plug>TComment_\_s
+xmap \_s <Plug>TComment_\_s
+omap \_s <Plug>TComment_\_s
+nmap \_n <Plug>TComment_\_n
+xmap \_n <Plug>TComment_\_n
+omap \_n <Plug>TComment_\_n
+nmap \_a <Plug>TComment_\_a
+xmap \_a <Plug>TComment_\_a
+omap \_a <Plug>TComment_\_a
+nmap \_b <Plug>TComment_\_b
+xmap \_b <Plug>TComment_\_b
+omap \_b <Plug>TComment_\_b
+nmap \_r <Plug>TComment_\_r
+xmap \_r <Plug>TComment_\_r
+omap \_r <Plug>TComment_\_r
+nmap \_  <Plug>TComment_\_ 
+xmap \_  <Plug>TComment_\_ 
+omap \_  <Plug>TComment_\_ 
+nmap \_p <Plug>TComment_\_p
+xmap \_p <Plug>TComment_\_p
+omap \_p <Plug>TComment_\_p
+nmap \__ <Plug>TComment_\__
+omap \__ <Plug>TComment_\__
 nmap <silent> \ig <Plug>IndentGuidesToggle
 smap \_s <Plug>TComment_\_s
 smap \_n <Plug>TComment_\_n
@@ -166,20 +166,20 @@ nmap <silent> gc <Plug>TComment_gc
 xmap ic <Plug>TComment_ic
 omap ic <Plug>TComment_ic
 smap ic <Plug>TComment_ic
-nnoremap <Plug>TComment_ :TComment
-snoremap <Plug>TComment_\__ :TComment
-nnoremap <Plug>TComment_\__ :TComment
-nnoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)
-nnoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)
-nnoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)
-nnoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)
-nnoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)
-nnoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)
-nnoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
-nnoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
-nnoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
-snoremap <BS> a<BS>
 snoremap <Del> a<BS>
+snoremap <BS> a<BS>
+nnoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
+nnoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
+nnoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
+nnoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)
+nnoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)
+nnoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)
+nnoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)
+nnoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)
+nnoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)
+nnoremap <Plug>TComment_\__ :TComment
+snoremap <Plug>TComment_\__ :TComment
+nnoremap <Plug>TComment_ :TComment
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cfile>"),0)
 nnoremap <silent> <Plug>(vimshell_create) :call vimshell#create_shell(0, '')
 nnoremap <silent> <Plug>(vimshell_switch) :call vimshell#switch_shell(0, '')
@@ -293,6 +293,7 @@ inoremap jj 
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=0
+set balloonexpr=SyntasticBalloonsExprNotifier()
 set completeopt=preview,menuone
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
@@ -325,15 +326,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 index.php
-badd +1 classes.php
+badd +5 index.php
+badd +8 classes.php
 badd +1 classoperatingdbTest.php
-badd +1 compilclassTest.php
+badd +45 compilclassTest.php
 badd +1 getdividedwordfromdomTest.php
 badd +1 getdomTest.php
 badd +1 getdomfromxpathdomTest.php
 badd +1 htmlBodyTest.php
-badd +1590 ~/Documents/project/mounter/etc/php.ini
+badd +1 tedwordclass.php
 argglobal
 silent! argdel *
 argadd index.php
@@ -468,12 +469,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 189 - ((3 * winheight(0) + 18) / 36)
+let s:l = 5 - ((4 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-189
+5
 normal! 0
+lcd ~/Documents/project/mounter/var/www/html/test
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
