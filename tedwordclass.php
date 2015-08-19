@@ -1,8 +1,6 @@
 <?php
 
 
-$query = 'body//div[@class="talk-article__body talk-transcript__body"]//span';
-$url = 'http://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work/transcript?language=en';
 /**
  * 指定したurlのhtmlを返す
  *
@@ -154,6 +152,10 @@ class GetDividedWordFromDom
     {
         return $this->words;
     }
+    public function getWordsByNumber($number)
+    {
+        return $this->words[$number];
+    }
 }
 
 class ClassOperatingDB
@@ -187,20 +189,18 @@ class ClassOperatingDB
  * データベースに英和辞典を突っ込む
  * 
  */
-class insertDictionary
+class InsertDictionary
 {
+    private $db;
+
     /**
      * 偶数なの？ 
      *
      * @param integer $number 
      * @return bool
      */
-    static function inspectEven($number)
+    private function inspectEven($number)
     {
-        if($number === 0){
-            return false;
-            die();
-        }
         $mod = $number % 2;
         if($mod === 0){
             return true;
@@ -211,40 +211,87 @@ class insertDictionary
     /**
      * データベースに突っ込む役目
      */
-    static function insertFunction()
+    public function __construct()
     {
-        $db = new ClassOperatingDB();
+        $this->db = new ClassOperatingDB();
         $sqlpre = 
-        $db->getDbhandle()->prepare
+        $this->db->getDbhandle()->prepare
         (
-            '
-            insert into
-            transwords(id, enword, transword) 
+           " 
+            insert ignore into
+            transwords(id,enword,transword) 
             values(:id, :enword, :transword)
-            '
+           " 
         );
         $sqlpre->bindParam(':id',$id);
         $sqlpre->bindParam(':enword',$enword);
         $sqlpre->bindParam(':transword',$transword);
 
-        $i = 1;
         $handle = fopen("gene-utf8.txt", "r");
         if ($handle){
             while (($buffer = fgets($handle)) !== false) {
-                if (inspectEven($i)) {
-                    $transword = $buffer;
+                static $i = 1;
+                static $j = 0;
+                if ($this->inspectEven($i)) {
+                    $transword = str_replace
+                        (
+                            array("\r\n", "\r", "\n"),
+                            '',
+                            $buffer
+                        ); 
                     $sqlpre->execute(); 
+                    $j++;
+                    echo "{$j}行目インサート<br>";
                 }else{
-                    $enword = $buffer;
+                    $enword = str_replace
+                        (
+                            array("\r\n", "\r", "\n"),
+                            '',
+                            $buffer
+                        ); 
                 }
                 $i++;
             }
             fclose($handle);
+            echo "インサート終了　行数".$j."行";
         }
     }
 }
+class SelctSql
+{
+    static function selectTranswordByEnWord()
+    {
+        $sql = 
+            "select transword".
+            "from transwords". 
+            "where word= :word";
+        return $sql;
+    }
 
-
+}
+class SelectWords
+{
+    private $db;
+    private $result;
+    public function __construct()
+    {
+        $this->db = new ClassOperatingDB(); 
+    }
+    public function selctWordFunc($sql, $word)
+    {
+        $sqlpre = $this->db->getDbhandle()->prepare
+            (
+                $sql
+            );
+        $sqlpre->bindParam( ':word', $word); 
+        $sqlpre->execute();
+        $this->result = $sqlpre->fetchAll();
+    }
+    public function getResult()
+    {
+        return $this->result[0]["transword"];
+    }
+}
 
 
 
