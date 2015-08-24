@@ -1,5 +1,12 @@
 <?php
-require_once('tedwordclass.php');
+$classDir = dirname(__dir__);
+echo $classDir;
+require_once('db-class.php');
+require_once(dirname(__FILE__).'Selectwords-class.php' );
+require_once(dirname(__FILE__).'dom-class.php' );
+require_once(dirname(__FILE__).'getdividedwordfromdom-class.php' );
+require_once(dirname(__FILE__).'db-class.php' );
+require_once(dirname(__FILE__).'db-class.php' );
 class Data 
 {
      private $url = 
