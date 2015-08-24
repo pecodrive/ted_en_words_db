@@ -1,12 +1,12 @@
 <?php
 
-require_once("tedwordclass.php");
+require_once(dirname(__FILE__).'/class/classes.php');
 
 $query = 'body//div[@class="talk-article__body talk-transcript__body"]//span';
 $url = 'http://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work/transcript?language=en';
 
 $wordArray = new GetDividedWordFromDom($url, $query);
-var_dump($wordArray->getWords());
+//var_dump($wordArray->getWords());
 $selctobj = new SelectWords();
 foreach ($wordArray->getWords() as $item) {
     static $i = 0;
@@ -15,7 +15,7 @@ foreach ($wordArray->getWords() as $item) {
         "select transword from transwords where enword=:word",
         WordRepair::wordFirstUpperCaseRepair($item)
     );
-    echo $wordArray->getWordsByNumber($i).
+    echo $i." : ".$wordArray->getWordsByNumber($i).
             " : ".$selctobj->getResult()."<br>";
     $i++;
 }

@@ -26,7 +26,14 @@ class SelectWords
     }
     public function getResult()
     {
-            return $this->result[0]["transword"];
+        return $this->emptyResult($this->result);
+    }
+    public function emptyResult($result)
+    {
+        if(empty($this->result)){
+            return "翻訳できませんでした(辞書の都合上,複数形や進行形などの変化形は翻訳できません）";
+        }
+        return $this->result[0]["transword"];
     }
 }
 class WordRepair {

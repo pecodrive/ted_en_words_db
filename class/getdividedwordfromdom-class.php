@@ -35,6 +35,9 @@ class GetDividedWordFromDom
         );
         return $this->unnecessaryElements($wordsArray);
     }
+    /**
+     * 空白削除
+     */
     public function unnecessaryElements($array)
    {
         $unsetwords = array
@@ -44,27 +47,28 @@ class GetDividedWordFromDom
                 "(Laughter)"
             );
         $arrayElimi = $array;
-        $arrayElimi = array_filter($arrayElimi, "strlen");
-        $arrayElimi = $this->arraySerchAndUnset
+        $arrayElimi2 = $this->arraySerchAndUnset
             (
                 $arrayElimi, $unsetwords
             );
-        return $arrayElimi;
+        $arrayElimi3 = array_filter($arrayElimi2, "strlen");
+        $arrayElimi4 = array_values($arrayElimi3);
+        return $arrayElimi4;
     }
-    public function arraySerchAndUnset($arrayElimi, $unsetWord)
+    /**
+     * いらない要素を総検索して消す
+     */
+    public function arraySerchAndUnset($arrayElimi, $unsetWords)
     {
-        $arrayElimi = array_values($arrayElimi);
-        foreach ($unsetWord as $item) {
-            //echo $item;
-            $key = true;
-            while ($key == true) {
-                $key = array_search($item, $arrayElimi);
-                if($key){
-                    unset($arrayElimi[$key]);
+        $arrayElimiCount = count($arrayElimi);
+        $unsetWordsCount = count($unsetWords);
+        for ($i=0; $i < $unsetWordsCount; $i++) {
+            for ($j=0; $j < $arrayElimiCount; $j++) {
+                if($arrayElimi[$j] === $unsetWords[$i]){
+                    $arrayElimi[$j] = "";
                 }
             }
         }
-        $arrayElimi = array_values($arrayElimi);
         return $arrayElimi;
     }
     public function getWords()

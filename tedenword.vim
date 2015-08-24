@@ -35,8 +35,10 @@ inoremap <Up> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <expr> <BS> neocomplete#smart_close_popup()."\"
+snoremap  a<BS>
 xmap  <Plug>(neosnippet_expand_target)
 smap  <Plug>(neosnippet_expand_or_jump)
+snoremap  a<BS>
 map  <Plug>(ctrlp)
 noremap f F
 noremap w b
@@ -95,17 +97,30 @@ noremap  ! :!
 noremap  r :bnext
 noremap  w :w
 nmap <silent> \ig <Plug>IndentGuidesToggle
-map \_s <Plug>TComment_\_s
-map \_n <Plug>TComment_\_n
-map \_a <Plug>TComment_\_a
-map \_b <Plug>TComment_\_b
-map \_r <Plug>TComment_\_r
+nmap \_s <Plug>TComment_\_s
+xmap \_s <Plug>TComment_\_s
+omap \_s <Plug>TComment_\_s
+nmap \_n <Plug>TComment_\_n
+xmap \_n <Plug>TComment_\_n
+omap \_n <Plug>TComment_\_n
+nmap \_a <Plug>TComment_\_a
+xmap \_a <Plug>TComment_\_a
+omap \_a <Plug>TComment_\_a
+nmap \_b <Plug>TComment_\_b
+xmap \_b <Plug>TComment_\_b
+omap \_b <Plug>TComment_\_b
+nmap \_r <Plug>TComment_\_r
+xmap \_r <Plug>TComment_\_r
+omap \_r <Plug>TComment_\_r
 xmap \_i <Plug>TComment_\_i
-map \_  <Plug>TComment_\_ 
-map \_p <Plug>TComment_\_p
+nmap \_  <Plug>TComment_\_ 
+xmap \_  <Plug>TComment_\_ 
+omap \_  <Plug>TComment_\_ 
+nmap \_p <Plug>TComment_\_p
+xmap \_p <Plug>TComment_\_p
+omap \_p <Plug>TComment_\_p
 xmap \__ <Plug>TComment_\__
 nmap \__ <Plug>TComment_\__
-smap \__ <Plug>TComment_\__
 omap \__ <Plug>TComment_\__
 nnoremap <silent> \pcf :call PhpCsFixerFixFile()
 nnoremap <silent> \pcd :call PhpCsFixerFixDirectory()
@@ -141,7 +156,9 @@ nmap <silent> gc1c <Plug>TComment_gc1c
 nmap <silent> gc1 <Plug>TComment_gc1
 nmap <silent> gc <Plug>TComment_gc
 omap ic <Plug>TComment_ic
-vmap ic <Plug>TComment_ic
+xmap ic <Plug>TComment_ic
+snoremap <Del> a<BS>
+snoremap <BS> a<BS>
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cfile>"),0)
 nnoremap <silent> <Plug>(vimshell_create) :call vimshell#create_shell(0, '')
 nnoremap <silent> <Plug>(vimshell_switch) :call vimshell#switch_shell(0, '')
@@ -266,6 +283,8 @@ imap  <Plug>TComment_
 inoremap jj 
 let &cpo=s:cpo_save
 unlet s:cpo_save
+set balloonexpr=SyntasticBalloonsExprNotifier()
+set completeopt=preview,menuone
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
 set helplang=ja
@@ -296,12 +315,23 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +8 class/classes.php
+badd +1 class/dom-class.php
+badd +1 class/insertdictonary-class.php
+badd +12 class/db-class.php
+badd +19 class/getdividedwordfromdom-class.php
+badd +6 class/selectwords-class.php
 badd +1 index.php
-badd +1 tedwordclass.php
+badd +11 class/cannottranslation-class.php
 argglobal
 silent! argdel *
+argadd class/classes.php
+argadd class/dom-class.php
+argadd class/insertdictonary-class.php
+argadd class/db-class.php
+argadd class/getdividedwordfromdom-class.php
+argadd class/selectwords-class.php
 argadd index.php
-argadd tedwordclass.php
 edit index.php
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -315,6 +345,7 @@ set winheight=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 74 + 75) / 150)
 argglobal
+edit index.php
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
@@ -437,9 +468,10 @@ exe s:l
 normal! zt
 1
 normal! 0
+lcd ~/Documents/project/mounter/var/www/html/test
 wincmd w
 argglobal
-edit tedwordclass.php
+edit ~/Documents/project/mounter/var/www/html/test/class/selectwords-class.php
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
@@ -556,12 +588,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 34 - ((31 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+34
+normal! 077|
+lcd ~/Documents/project/mounter/var/www/html/test
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
