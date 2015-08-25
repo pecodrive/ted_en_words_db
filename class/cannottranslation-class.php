@@ -1,12 +1,16 @@
 <?php
-
+$query = 
+'INSERT INTO tedword.cannot_translation_words
+(cannottransword) VALUES(:cannottransword)';
 /**
  * 翻訳できなかった（リザルトを得られなかった）単語の履歴収集
  */
-class CanNotTranslation
+class CanNotTranslation extends InsertExecuter
 {
-    static function canNotTranslationWordInsert()
+    public function executer($query)
     {
-        //todo
+        
     }
 }
+
+

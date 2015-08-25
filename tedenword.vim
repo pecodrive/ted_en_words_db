@@ -2,11 +2,11 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <silent> <Plug>(neocomplete_start_manual_complete) =neocomplete#mappings#manual_complete()=neocomplete#mappings#popup_post()
-inoremap <silent> <Plug>(neocomplete_start_auto_complete) =neocomplete#mappings#auto_complete()=neocomplete#mappings#popup_post()
-inoremap <silent> <Plug>(neocomplete_start_omni_complete) 
-inoremap <silent> <expr> <Plug>(neocomplete_start_unite_quick_match) unite#sources#neocomplete#start_quick_match()
 inoremap <silent> <expr> <Plug>(neocomplete_start_unite_complete) unite#sources#neocomplete#start_complete()
+inoremap <silent> <expr> <Plug>(neocomplete_start_unite_quick_match) unite#sources#neocomplete#start_quick_match()
+inoremap <silent> <Plug>(neocomplete_start_omni_complete) 
+inoremap <silent> <Plug>(neocomplete_start_auto_complete) =neocomplete#mappings#auto_complete()=neocomplete#mappings#popup_post()
+inoremap <silent> <Plug>(neocomplete_start_manual_complete) =neocomplete#mappings#manual_complete()=neocomplete#mappings#popup_post()
 inoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
 inoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
 inoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
@@ -43,32 +43,33 @@ map  <Plug>(ctrlp)
 noremap f F
 noremap w b
 noremap e ge
-vmap 9 <Plug>TComment_9
+nmap  <Plug>TComment_
+nmap 1 <Plug>TComment_1
+nmap 2 <Plug>TComment_2
+nmap 3 <Plug>TComment_3
+nmap 4 <Plug>TComment_4
+nmap 5 <Plug>TComment_5
+nmap 6 <Plug>TComment_6
+nmap 7 <Plug>TComment_7
+nmap 8 <Plug>TComment_8
 nmap 9 <Plug>TComment_9
+vmap 9 <Plug>TComment_9
 omap 9 <Plug>TComment_9
 vmap 8 <Plug>TComment_8
-nmap 8 <Plug>TComment_8
 omap 8 <Plug>TComment_8
 vmap 7 <Plug>TComment_7
-nmap 7 <Plug>TComment_7
 omap 7 <Plug>TComment_7
 vmap 6 <Plug>TComment_6
-nmap 6 <Plug>TComment_6
 omap 6 <Plug>TComment_6
 vmap 5 <Plug>TComment_5
-nmap 5 <Plug>TComment_5
 omap 5 <Plug>TComment_5
 vmap 4 <Plug>TComment_4
-nmap 4 <Plug>TComment_4
 omap 4 <Plug>TComment_4
 vmap 3 <Plug>TComment_3
-nmap 3 <Plug>TComment_3
 omap 3 <Plug>TComment_3
 vmap 2 <Plug>TComment_2
-nmap 2 <Plug>TComment_2
 omap 2 <Plug>TComment_2
 vmap 1 <Plug>TComment_1
-nmap 1 <Plug>TComment_1
 omap 1 <Plug>TComment_1
 map ca <Plug>TComment_ca
 map cc <Plug>TComment_cc
@@ -81,7 +82,6 @@ map r <Plug>TComment_r
 map   <Plug>TComment_ 
 map p <Plug>TComment_p
 vmap  <Plug>TComment_
-nmap  <Plug>TComment_
 omap  <Plug>TComment_
 noremap  rt :bprevious
 noremap  cl :lcd %:h
@@ -96,32 +96,40 @@ noremap  a :qa
 noremap  ! :! 
 noremap  r :bnext
 noremap  w :w
-nmap <silent> \ig <Plug>IndentGuidesToggle
-nmap \_s <Plug>TComment_\_s
-xmap \_s <Plug>TComment_\_s
-omap \_s <Plug>TComment_\_s
-nmap \_n <Plug>TComment_\_n
-xmap \_n <Plug>TComment_\_n
-omap \_n <Plug>TComment_\_n
-nmap \_a <Plug>TComment_\_a
-xmap \_a <Plug>TComment_\_a
-omap \_a <Plug>TComment_\_a
-nmap \_b <Plug>TComment_\_b
-xmap \_b <Plug>TComment_\_b
-omap \_b <Plug>TComment_\_b
-nmap \_r <Plug>TComment_\_r
-xmap \_r <Plug>TComment_\_r
-omap \_r <Plug>TComment_\_r
-xmap \_i <Plug>TComment_\_i
-nmap \_  <Plug>TComment_\_ 
-xmap \_  <Plug>TComment_\_ 
-omap \_  <Plug>TComment_\_ 
-nmap \_p <Plug>TComment_\_p
-xmap \_p <Plug>TComment_\_p
-omap \_p <Plug>TComment_\_p
-xmap \__ <Plug>TComment_\__
-nmap \__ <Plug>TComment_\__
 omap \__ <Plug>TComment_\__
+nmap \__ <Plug>TComment_\__
+omap \_p <Plug>TComment_\_p
+xmap \_p <Plug>TComment_\_p
+nmap \_p <Plug>TComment_\_p
+omap \_  <Plug>TComment_\_ 
+xmap \_  <Plug>TComment_\_ 
+nmap \_  <Plug>TComment_\_ 
+omap \_r <Plug>TComment_\_r
+xmap \_r <Plug>TComment_\_r
+nmap \_r <Plug>TComment_\_r
+omap \_b <Plug>TComment_\_b
+xmap \_b <Plug>TComment_\_b
+nmap \_b <Plug>TComment_\_b
+omap \_a <Plug>TComment_\_a
+xmap \_a <Plug>TComment_\_a
+nmap \_a <Plug>TComment_\_a
+omap \_n <Plug>TComment_\_n
+xmap \_n <Plug>TComment_\_n
+nmap \_n <Plug>TComment_\_n
+omap \_s <Plug>TComment_\_s
+xmap \_s <Plug>TComment_\_s
+nmap \_s <Plug>TComment_\_s
+nmap <silent> \ig <Plug>IndentGuidesToggle
+smap \_s <Plug>TComment_\_s
+smap \_n <Plug>TComment_\_n
+smap \_a <Plug>TComment_\_a
+smap \_b <Plug>TComment_\_b
+smap \_r <Plug>TComment_\_r
+xmap \_i <Plug>TComment_\_i
+smap \_  <Plug>TComment_\_ 
+smap \_p <Plug>TComment_\_p
+xmap \__ <Plug>TComment_\__
+smap \__ <Plug>TComment_\__
 nnoremap <silent> \pcf :call PhpCsFixerFixFile()
 nnoremap <silent> \pcd :call PhpCsFixerFixDirectory()
 nmap gx <Plug>NetrwBrowseX
@@ -155,10 +163,23 @@ nmap <silent> gc2 <Plug>TComment_gc2
 nmap <silent> gc1c <Plug>TComment_gc1c
 nmap <silent> gc1 <Plug>TComment_gc1
 nmap <silent> gc <Plug>TComment_gc
-omap ic <Plug>TComment_ic
 xmap ic <Plug>TComment_ic
-snoremap <Del> a<BS>
+omap ic <Plug>TComment_ic
+smap ic <Plug>TComment_ic
+nnoremap <Plug>TComment_ :TComment
+snoremap <Plug>TComment_\__ :TComment
+nnoremap <Plug>TComment_\__ :TComment
+nnoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)
+nnoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)
+nnoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)
+nnoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)
+nnoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)
+nnoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)
+nnoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
+nnoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
+nnoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
 snoremap <BS> a<BS>
+snoremap <Del> a<BS>
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cfile>"),0)
 nnoremap <silent> <Plug>(vimshell_create) :call vimshell#create_shell(0, '')
 nnoremap <silent> <Plug>(vimshell_switch) :call vimshell#switch_shell(0, '')
@@ -175,31 +196,22 @@ nnoremap <silent> <Plug>TComment_gc3c :call tcomment#ResetOption() | if v:cou
 nnoremap <silent> <Plug>TComment_gc2c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc2cg@
 nnoremap <silent> <Plug>TComment_gc1c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc1cg@
 vnoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
-nnoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
 onoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)
 vnoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
-nnoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
 onoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)
 vnoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
-nnoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
 onoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)
 vnoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)
-nnoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)
 onoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)
 vnoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)
-nnoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)
 onoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)
 vnoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)
-nnoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)
 onoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)
 vnoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)
-nnoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)
 onoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)
 vnoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)
-nnoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)
 onoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)
 vnoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)
-nnoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)
 onoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)
 nnoremap <silent> <Plug>TComment_gc :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gcg@
 xnoremap <Plug>TComment_gc :TCommentMaybeInline
@@ -223,8 +235,6 @@ xnoremap <Plug>TComment_\_i :TCommentInline
 noremap <Plug>TComment_\_  :TComment 
 noremap <Plug>TComment_\_p vip:TComment
 xnoremap <Plug>TComment_\__ :TCommentMaybeInline
-nnoremap <Plug>TComment_\__ :TComment
-snoremap <Plug>TComment_\__ :TComment
 onoremap <Plug>TComment_\__ :TComment
 noremap <Plug>TComment_ca :call tcomment#SetOption("as", input("Comment as: ", &filetype, "customlist,tcomment#Complete"))
 noremap <Plug>TComment_cc :call tcomment#SetOption("count", v:count1)
@@ -237,7 +247,6 @@ noremap <Plug>TComment_r :TCommentRight
 noremap <Plug>TComment_  :TComment 
 noremap <Plug>TComment_p m`vip:TComment``
 vnoremap <Plug>TComment_ :TCommentMaybeInline
-nnoremap <Plug>TComment_ :TComment
 onoremap <Plug>TComment_ :TComment
 xnoremap <silent> <Plug>(neosnippet_register_oneshot_snippet) :call neosnippet#mappings#_register_oneshot_snippet()
 xnoremap <silent> <Plug>(neosnippet_expand_target) :call neosnippet#mappings#_expand_target()
@@ -284,6 +293,7 @@ inoremap jj 
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set balloonexpr=SyntasticBalloonsExprNotifier()
+set comments=s1:/*,mb:*,ex:*/,://,:#
 set completeopt=preview,menuone
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
@@ -316,13 +326,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +8 class/classes.php
-badd +1 class/dom-class.php
-badd +1 class/insertdictonary-class.php
-badd +12 class/db-class.php
-badd +19 class/getdividedwordfromdom-class.php
-badd +6 class/selectwords-class.php
+badd +66 class/dom-class.php
+badd +6 class/insertdictonary-class.php
+badd +1 class/db-class.php
+badd +11 class/getdividedwordfromdom-class.php
+badd +48 class/selectwords-class.php
 badd +1 index.php
-badd +11 class/cannottranslation-class.php
+badd +14 class/cannottranslation-class.php
 argglobal
 silent! argdel *
 argadd class/classes.php
@@ -332,7 +342,7 @@ argadd class/db-class.php
 argadd class/getdividedwordfromdom-class.php
 argadd class/selectwords-class.php
 argadd index.php
-edit index.php
+edit class/cannottranslation-class.php
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -345,7 +355,7 @@ set winheight=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 74 + 75) / 150)
 argglobal
-edit index.php
+edit class/cannottranslation-class.php
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
@@ -462,16 +472,16 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 16 - ((15 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+16
 normal! 0
 lcd ~/Documents/project/mounter/var/www/html/test
 wincmd w
 argglobal
-edit ~/Documents/project/mounter/var/www/html/test/class/selectwords-class.php
+edit ~/Documents/project/mounter/var/www/html/test/class/db-class.php
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
@@ -588,12 +598,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 34 - ((31 * winheight(0) + 18) / 36)
+let s:l = 17 - ((16 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-34
-normal! 077|
+17
+normal! 012|
 lcd ~/Documents/project/mounter/var/www/html/test
 wincmd w
 2wincmd w

@@ -3,10 +3,8 @@
  * データベースに英和辞典を突っ込む
  * 
  */
-class InsertDictionary
+class InsertDictionary extends InsertExecuter 
 {
-    private $db;
-
     /**
      * 偶数なの？ 
      *
@@ -22,25 +20,8 @@ class InsertDictionary
             return false;
         }
     }
-    /**
-     * データベースに突っ込む役目
-     */
-    public function __construct()
+    public function executer()
     {
-        $this->db = new ClassOperatingDB();
-        $sqlpre = 
-        $this->db->getDbhandle()->prepare
-        (
-           " 
-            insert ignore into
-            transwords(id,enword,transword) 
-            values(:id, :enword, :transword)
-           " 
-        );
-        $sqlpre->bindParam(':id',$id);
-        $sqlpre->bindParam(':enword',$enword);
-        $sqlpre->bindParam(':transword',$transword);
-
         $handle = fopen("gene-utf8.txt", "r");
         if ($handle){
             while (($buffer = fgets($handle)) !== false) {
@@ -71,7 +52,3 @@ class InsertDictionary
         }
     }
 }
-
-
-
-
