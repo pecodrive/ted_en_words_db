@@ -6,10 +6,10 @@
 * @param object $purposeDom 
 * @return array $dividedWordArray 
 */
-class GetDividedWordFromDom
+class GetDividedWordFromDom implements GetValueInterface
 {
     private $dom;
-    private $words;
+    private $value;
     public function __construct($url, $query)
     {
         $this->dom = new CompileClass($url, $query);
@@ -21,7 +21,7 @@ class GetDividedWordFromDom
                     $this->arrayRebuilding($item)
                );
         }
-        $this->words = $dividedWordArray;
+        $this->value = $dividedWordArray;
     }
     /**
      * 空や不要な要素を配列から削除する
@@ -71,13 +71,13 @@ class GetDividedWordFromDom
         }
         return $arrayElimi;
     }
-    public function getWords()
+    public function getValue()
     {
-        return $this->words;
+        return $this->value;
     }
-    public function getWordsByNumber($number)
+    public function getValueByNumber($number)
     {
-        return $this->words[$number];
+        return $this->value[$number];
     }
 }
 

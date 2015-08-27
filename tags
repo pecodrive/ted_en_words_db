@@ -1,0 +1,508 @@
+	tedenword.vim	/^inoremap <expr>  neocomplete#cancel_popup()$/;"	m
+	tedenword.vim	/^inoremap <expr>  neocomplete#undo_completion()$/;"	m
+	tedenword.vim	/^inoremap <expr>  neocomplete#smart_close_popup()."\\"$/;"	m
+		tedenword.vim	/^inoremap <expr> 	 pumvisible() ? "\\" : "\\	"$/;"	m
+	tedenword.vim	/^noremap  ! :! $/;"	m
+	tedenword.vim	/^noremap  1 :q!$/;"	m
+	tedenword.vim	/^noremap  a :qa$/;"	m
+	tedenword.vim	/^noremap  b :b $/;"	m
+	tedenword.vim	/^noremap  cd :cd$/;"	m
+	tedenword.vim	/^noremap  cl :lcd %:h$/;"	m
+	tedenword.vim	/^noremap  e :e $/;"	m
+	tedenword.vim	/^noremap  l :ls$/;"	m
+	tedenword.vim	/^noremap  p :pwd$/;"	m
+	tedenword.vim	/^noremap  q :q$/;"	m
+	tedenword.vim	/^noremap  r :bnext$/;"	m
+	tedenword.vim	/^noremap  rt :bprevious$/;"	m
+	tedenword.vim	/^noremap  w :w$/;"	m
+	tedenword.vim	/^noremap  wa :wa$/;"	m
+	tedenword.vim	/^imap  <Plug>(neosnippet_expand_or_jump)$/;"	m
+	tedenword.vim	/^inoremap <expr>  neocomplete#complete_common_string()$/;"	m
+	tedenword.vim	/^inoremap  :call PhpDocSingle()$/;"	m
+	tedenword.vim	/^map  <Plug>(ctrlp)$/;"	m
+	tedenword.vim	/^inoremap <expr>  neocomplete#close_popup()$/;"	m
+e	tedenword.vim	/^noremap e ge$/;"	m
+f	tedenword.vim	/^noremap f F$/;"	m
+w	tedenword.vim	/^noremap w b$/;"	m
+	tedenword.vim	/^imap   <Plug>TComment_ $/;"	m
+	tedenword.vim	/^map   <Plug>TComment_ $/;"	m
+	tedenword.vim	/^imap  <Plug>TComment_$/;"	m
+	tedenword.vim	/^nmap  <Plug>TComment_$/;"	m
+	tedenword.vim	/^omap  <Plug>TComment_$/;"	m
+	tedenword.vim	/^vmap  <Plug>TComment_$/;"	m
+1	tedenword.vim	/^imap 1 <Plug>TComment_1$/;"	m
+1	tedenword.vim	/^nmap 1 <Plug>TComment_1$/;"	m
+1	tedenword.vim	/^omap 1 <Plug>TComment_1$/;"	m
+1	tedenword.vim	/^vmap 1 <Plug>TComment_1$/;"	m
+2	tedenword.vim	/^imap 2 <Plug>TComment_2$/;"	m
+2	tedenword.vim	/^nmap 2 <Plug>TComment_2$/;"	m
+2	tedenword.vim	/^omap 2 <Plug>TComment_2$/;"	m
+2	tedenword.vim	/^vmap 2 <Plug>TComment_2$/;"	m
+3	tedenword.vim	/^imap 3 <Plug>TComment_3$/;"	m
+3	tedenword.vim	/^nmap 3 <Plug>TComment_3$/;"	m
+3	tedenword.vim	/^omap 3 <Plug>TComment_3$/;"	m
+3	tedenword.vim	/^vmap 3 <Plug>TComment_3$/;"	m
+4	tedenword.vim	/^imap 4 <Plug>TComment_4$/;"	m
+4	tedenword.vim	/^nmap 4 <Plug>TComment_4$/;"	m
+4	tedenword.vim	/^omap 4 <Plug>TComment_4$/;"	m
+4	tedenword.vim	/^vmap 4 <Plug>TComment_4$/;"	m
+5	tedenword.vim	/^imap 5 <Plug>TComment_5$/;"	m
+5	tedenword.vim	/^nmap 5 <Plug>TComment_5$/;"	m
+5	tedenword.vim	/^omap 5 <Plug>TComment_5$/;"	m
+5	tedenword.vim	/^vmap 5 <Plug>TComment_5$/;"	m
+6	tedenword.vim	/^imap 6 <Plug>TComment_6$/;"	m
+6	tedenword.vim	/^nmap 6 <Plug>TComment_6$/;"	m
+6	tedenword.vim	/^omap 6 <Plug>TComment_6$/;"	m
+6	tedenword.vim	/^vmap 6 <Plug>TComment_6$/;"	m
+7	tedenword.vim	/^imap 7 <Plug>TComment_7$/;"	m
+7	tedenword.vim	/^nmap 7 <Plug>TComment_7$/;"	m
+7	tedenword.vim	/^omap 7 <Plug>TComment_7$/;"	m
+7	tedenword.vim	/^vmap 7 <Plug>TComment_7$/;"	m
+8	tedenword.vim	/^imap 8 <Plug>TComment_8$/;"	m
+8	tedenword.vim	/^nmap 8 <Plug>TComment_8$/;"	m
+8	tedenword.vim	/^omap 8 <Plug>TComment_8$/;"	m
+8	tedenword.vim	/^vmap 8 <Plug>TComment_8$/;"	m
+9	tedenword.vim	/^imap 9 <Plug>TComment_9$/;"	m
+9	tedenword.vim	/^nmap 9 <Plug>TComment_9$/;"	m
+9	tedenword.vim	/^omap 9 <Plug>TComment_9$/;"	m
+9	tedenword.vim	/^vmap 9 <Plug>TComment_9$/;"	m
+a	tedenword.vim	/^imap a <Plug>TComment_a$/;"	m
+a	tedenword.vim	/^map a <Plug>TComment_a$/;"	m
+b	tedenword.vim	/^imap b <Plug>TComment_b$/;"	m
+b	tedenword.vim	/^map b <Plug>TComment_b$/;"	m
+ca	tedenword.vim	/^map ca <Plug>TComment_ca$/;"	m
+cc	tedenword.vim	/^map cc <Plug>TComment_cc$/;"	m
+i	tedenword.vim	/^imap i <Plug>TComment_i$/;"	m
+i	tedenword.vim	/^map i <Plug>TComment_i$/;"	m
+n	tedenword.vim	/^imap n <Plug>TComment_n$/;"	m
+n	tedenword.vim	/^map n <Plug>TComment_n$/;"	m
+p	tedenword.vim	/^imap p <Plug>TComment_p$/;"	m
+p	tedenword.vim	/^map p <Plug>TComment_p$/;"	m
+r	tedenword.vim	/^imap r <Plug>TComment_r$/;"	m
+r	tedenword.vim	/^map r <Plug>TComment_r$/;"	m
+s	tedenword.vim	/^imap s <Plug>TComment_s$/;"	m
+s	tedenword.vim	/^map s <Plug>TComment_s$/;"	m
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+0	tedenword.vim	/^normal! 0$/;"	m
+012|	tedenword.vim	/^normal! 012|$/;"	m
+07|	tedenword.vim	/^normal! 07|$/;"	m
+<BS>	tedenword.vim	/^inoremap <expr> <BS> neocomplete#smart_close_popup()."\\"$/;"	m
+<Down>	tedenword.vim	/^inoremap <Down> <Nop>$/;"	m
+<Down>	tedenword.vim	/^noremap <Down> <Nop>$/;"	m
+<F2>	tedenword.vim	/^map <F2> w$/;"	m
+<F3>	tedenword.vim	/^map <F3> c$/;"	m
+<F5>	tedenword.vim	/^noremap <F5> :vsplit$/;"	m
+<F6>	tedenword.vim	/^noremap <F6> :split$/;"	m
+<Left>	tedenword.vim	/^inoremap <Left> <Nop>$/;"	m
+<Left>	tedenword.vim	/^noremap <Left> <Nop>$/;"	m
+<Plug>(ctrlp)	tedenword.vim	/^nnoremap <silent> <Plug>(ctrlp) :CtrlP$/;"	m
+<Plug>(neocomplete_start_auto_complete)	tedenword.vim	/^inoremap <silent> <Plug>(neocomplete_start_auto_complete) =neocomplete#mappings#auto_complete()$/;"	m
+<Plug>(neocomplete_start_manual_complete)	tedenword.vim	/^inoremap <silent> <Plug>(neocomplete_start_manual_complete) =neocomplete#mappings#manual_complete()$/;"	m
+<Plug>(neocomplete_start_omni_complete)	tedenword.vim	/^inoremap <silent> <Plug>(neocomplete_start_omni_complete) $/;"	m
+<Plug>(neocomplete_start_unite_complete)	tedenword.vim	/^inoremap <silent> <expr> <Plug>(neocomplete_start_unite_complete) unite#sources#neocomplete#start_complete()$/;"	m
+<Plug>(neocomplete_start_unite_quick_match)	tedenword.vim	/^inoremap <silent> <expr> <Plug>(neocomplete_start_unite_quick_match) unite#sources#neocomplete#start_quick_match()$/;"	m
+<Plug>(neosnippet_expand)	tedenword.vim	/^inoremap <silent> <expr> <Plug>(neosnippet_expand) neosnippet#mappings#expand_impl()$/;"	m
+<Plug>(neosnippet_expand_or_jump)	tedenword.vim	/^inoremap <silent> <expr> <Plug>(neosnippet_expand_or_jump) neosnippet#mappings#expand_or_jump_impl()$/;"	m
+<Plug>(neosnippet_jump)	tedenword.vim	/^inoremap <silent> <expr> <Plug>(neosnippet_jump) neosnippet#mappings#jump_impl()$/;"	m
+<Plug>(neosnippet_jump_or_expand)	tedenword.vim	/^inoremap <silent> <expr> <Plug>(neosnippet_jump_or_expand) neosnippet#mappings#jump_or_expand_impl()$/;"	m
+<Plug>(neosnippet_start_unite_snippet)	tedenword.vim	/^inoremap <silent> <expr> <Plug>(neosnippet_start_unite_snippet) unite#sources#neosnippet#start_complete()$/;"	m
+<Plug>(vimshell_create)	tedenword.vim	/^nnoremap <silent> <Plug>(vimshell_create) :call vimshell#create_shell(0, '')$/;"	m
+<Plug>(vimshell_split_create)	tedenword.vim	/^nnoremap <silent> <Plug>(vimshell_split_create) :call vimshell#create_shell(1, '')$/;"	m
+<Plug>(vimshell_split_switch)	tedenword.vim	/^nnoremap <silent> <Plug>(vimshell_split_switch) :call vimshell#switch_shell(1, '')$/;"	m
+<Plug>(vimshell_switch)	tedenword.vim	/^nnoremap <silent> <Plug>(vimshell_switch) :call vimshell#switch_shell(0, '')$/;"	m
+<Plug>NetrwBrowseX	tedenword.vim	/^nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cfile>"),0)$/;"	m
+<Plug>TComment_	tedenword.vim	/^inoremap <Plug>TComment_  :TComment $/;"	m
+<Plug>TComment_	tedenword.vim	/^noremap <Plug>TComment_  :TComment $/;"	m
+<Plug>TComment_	tedenword.vim	/^inoremap <Plug>TComment_ :TComment$/;"	m
+<Plug>TComment_	tedenword.vim	/^nnoremap <Plug>TComment_ :TComment$/;"	m
+<Plug>TComment_	tedenword.vim	/^onoremap <Plug>TComment_ :TComment$/;"	m
+<Plug>TComment_	tedenword.vim	/^vnoremap <Plug>TComment_ :TCommentMaybeInline$/;"	m
+<Plug>TComment_1	tedenword.vim	/^inoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)$/;"	m
+<Plug>TComment_1	tedenword.vim	/^nnoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)$/;"	m
+<Plug>TComment_1	tedenword.vim	/^onoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)$/;"	m
+<Plug>TComment_1	tedenword.vim	/^vnoremap <Plug>TComment_1 :call tcomment#SetOption("count", 1)$/;"	m
+<Plug>TComment_2	tedenword.vim	/^inoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)$/;"	m
+<Plug>TComment_2	tedenword.vim	/^nnoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)$/;"	m
+<Plug>TComment_2	tedenword.vim	/^onoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)$/;"	m
+<Plug>TComment_2	tedenword.vim	/^vnoremap <Plug>TComment_2 :call tcomment#SetOption("count", 2)$/;"	m
+<Plug>TComment_3	tedenword.vim	/^inoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)$/;"	m
+<Plug>TComment_3	tedenword.vim	/^nnoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)$/;"	m
+<Plug>TComment_3	tedenword.vim	/^onoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)$/;"	m
+<Plug>TComment_3	tedenword.vim	/^vnoremap <Plug>TComment_3 :call tcomment#SetOption("count", 3)$/;"	m
+<Plug>TComment_4	tedenword.vim	/^inoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)$/;"	m
+<Plug>TComment_4	tedenword.vim	/^nnoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)$/;"	m
+<Plug>TComment_4	tedenword.vim	/^onoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)$/;"	m
+<Plug>TComment_4	tedenword.vim	/^vnoremap <Plug>TComment_4 :call tcomment#SetOption("count", 4)$/;"	m
+<Plug>TComment_5	tedenword.vim	/^inoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)$/;"	m
+<Plug>TComment_5	tedenword.vim	/^nnoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)$/;"	m
+<Plug>TComment_5	tedenword.vim	/^onoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)$/;"	m
+<Plug>TComment_5	tedenword.vim	/^vnoremap <Plug>TComment_5 :call tcomment#SetOption("count", 5)$/;"	m
+<Plug>TComment_6	tedenword.vim	/^inoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)$/;"	m
+<Plug>TComment_6	tedenword.vim	/^nnoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)$/;"	m
+<Plug>TComment_6	tedenword.vim	/^onoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)$/;"	m
+<Plug>TComment_6	tedenword.vim	/^vnoremap <Plug>TComment_6 :call tcomment#SetOption("count", 6)$/;"	m
+<Plug>TComment_7	tedenword.vim	/^inoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)$/;"	m
+<Plug>TComment_7	tedenword.vim	/^nnoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)$/;"	m
+<Plug>TComment_7	tedenword.vim	/^onoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)$/;"	m
+<Plug>TComment_7	tedenword.vim	/^vnoremap <Plug>TComment_7 :call tcomment#SetOption("count", 7)$/;"	m
+<Plug>TComment_8	tedenword.vim	/^inoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)$/;"	m
+<Plug>TComment_8	tedenword.vim	/^nnoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)$/;"	m
+<Plug>TComment_8	tedenword.vim	/^onoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)$/;"	m
+<Plug>TComment_8	tedenword.vim	/^vnoremap <Plug>TComment_8 :call tcomment#SetOption("count", 8)$/;"	m
+<Plug>TComment_9	tedenword.vim	/^inoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)$/;"	m
+<Plug>TComment_9	tedenword.vim	/^nnoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)$/;"	m
+<Plug>TComment_9	tedenword.vim	/^onoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)$/;"	m
+<Plug>TComment_9	tedenword.vim	/^vnoremap <Plug>TComment_9 :call tcomment#SetOption("count", 9)$/;"	m
+<Plug>TComment_a	tedenword.vim	/^inoremap <Plug>TComment_a :TCommentAs $/;"	m
+<Plug>TComment_a	tedenword.vim	/^noremap <Plug>TComment_a :TCommentAs $/;"	m
+<Plug>TComment_b	tedenword.vim	/^inoremap <Plug>TComment_b :TCommentBlock mode=#$/;"	m
+<Plug>TComment_b	tedenword.vim	/^noremap <Plug>TComment_b :TCommentBlock$/;"	m
+<Plug>TComment_ca	tedenword.vim	/^noremap <Plug>TComment_ca :call tcomment#SetOption("as", input("Comment as: ", &filetype, "customlist,tcomment#Complete"))$/;"	m
+<Plug>TComment_cc	tedenword.vim	/^noremap <Plug>TComment_cc :call tcomment#SetOption("count", v:count1)$/;"	m
+<Plug>TComment_i	tedenword.vim	/^inoremap <Plug>TComment_i v:TCommentInline mode=#$/;"	m
+<Plug>TComment_i	tedenword.vim	/^noremap <Plug>TComment_i v:TCommentInline mode=I#$/;"	m
+<Plug>TComment_n	tedenword.vim	/^inoremap <Plug>TComment_n :TCommentAs =&ft$/;"	m
+<Plug>TComment_n	tedenword.vim	/^noremap <Plug>TComment_n :TCommentAs =&ft$/;"	m
+<Plug>TComment_p	tedenword.vim	/^inoremap <Plug>TComment_p :norm! m`vip$/;"	m
+<Plug>TComment_p	tedenword.vim	/^noremap <Plug>TComment_p m`vip:TComment$/;"	m
+<Plug>TComment_r	tedenword.vim	/^inoremap <Plug>TComment_r :TCommentRight$/;"	m
+<Plug>TComment_r	tedenword.vim	/^noremap <Plug>TComment_r :TCommentRight$/;"	m
+<Plug>TComment_s	tedenword.vim	/^inoremap <Plug>TComment_s :TCommentAs =&ft$/;"	m
+<Plug>TComment_s	tedenword.vim	/^noremap <Plug>TComment_s :TCommentAs =&ft$/;"	m
+<Plug>TComment_Comment	tedenword.vim	/^nnoremap <silent> <Plug>TComment_Comment :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Comment$/;"	m
+<Plug>TComment_Commentb	tedenword.vim	/^nnoremap <silent> <Plug>TComment_Commentb :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Commentb$/;"	m
+<Plug>TComment_Commentc	tedenword.vim	/^nnoremap <silent> <Plug>TComment_Commentc :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Commentc$/;"	m
+<Plug>TComment_Uncomment	tedenword.vim	/^nnoremap <silent> <Plug>TComment_Uncomment :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Uncomment$/;"	m
+<Plug>TComment_Uncommentb	tedenword.vim	/^nnoremap <silent> <Plug>TComment_Uncommentb :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Uncommentb$/;"	m
+<Plug>TComment_Uncommentc	tedenword.vim	/^nnoremap <silent> <Plug>TComment_Uncommentc :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Uncommentc$/;"	m
+<Plug>TComment_\_	tedenword.vim	/^noremap <Plug>TComment_\\_  :TComment $/;"	m
+<Plug>TComment_\__	tedenword.vim	/^nnoremap <Plug>TComment_\\__ :TComment$/;"	m
+<Plug>TComment_\__	tedenword.vim	/^onoremap <Plug>TComment_\\__ :TComment$/;"	m
+<Plug>TComment_\_a	tedenword.vim	/^noremap <Plug>TComment_\\_a :TCommentAs $/;"	m
+<Plug>TComment_\_b	tedenword.vim	/^noremap <Plug>TComment_\\_b :TCommentBlock$/;"	m
+<Plug>TComment_\_n	tedenword.vim	/^noremap <Plug>TComment_\\_n :TCommentAs =&ft$/;"	m
+<Plug>TComment_\_p	tedenword.vim	/^noremap <Plug>TComment_\\_p vip:TComment$/;"	m
+<Plug>TComment_\_r	tedenword.vim	/^noremap <Plug>TComment_\\_r :TCommentRight$/;"	m
+<Plug>TComment_\_s	tedenword.vim	/^noremap <Plug>TComment_\\_s :TCommentAs =&ft$/;"	m
+<Plug>TComment_gc	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc$/;"	m
+<Plug>TComment_gc1c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc1c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc1c$/;"	m
+<Plug>TComment_gc2c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc2c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc2c$/;"	m
+<Plug>TComment_gc3c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc3c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc3c$/;"	m
+<Plug>TComment_gc4c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc4c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc4c$/;"	m
+<Plug>TComment_gc5c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc5c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc5c$/;"	m
+<Plug>TComment_gc6c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc6c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc6c$/;"	m
+<Plug>TComment_gc7c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc7c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc7c$/;"	m
+<Plug>TComment_gc8c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc8c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc8c$/;"	m
+<Plug>TComment_gc9c	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gc9c :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc9c$/;"	m
+<Plug>TComment_gcb	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gcb :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gcb$/;"	m
+<Plug>TComment_gcc	tedenword.vim	/^nnoremap <silent> <Plug>TComment_gcc :call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gcc$/;"	m
+<Plug>TComment_ic	tedenword.vim	/^noremap <Plug>TComment_ic :call tcomment#TextObjectInlineComment()$/;"	m
+<Right>	tedenword.vim	/^inoremap <Right> <Nop>$/;"	m
+<Right>	tedenword.vim	/^noremap <Right> <Nop>$/;"	m
+<Up>	tedenword.vim	/^inoremap <Up> <Nop>$/;"	m
+<Up>	tedenword.vim	/^noremap <Up> <Nop>$/;"	m
+CanNotTranslation	class/cannottranslation-class.php	/^class CanNotTranslation extends Executer$/;"	c
+CanNotTranslation	class/cannottranslation-class.php	/^class CanNotTranslation extends InsertExecuter$/;"	c
+ClassOperatingDB	class/db-class.php	/^class ClassOperatingDB$/;"	c
+ClassOperatingDBTest	tests/classoperatingdbTest.php	/^class ClassOperatingDBTest extends PHPUnit_Framework_TestCase$/;"	c
+CompileClass	class/dom-class.php	/^class CompileClass$/;"	c
+CompileClassTest	tests/compilclassTest.php	/^class CompileClassTest extends PHPUnit_Framework_TestCase$/;"	c
+DbGenericOperation	class/db-class.php	/^class DbGenericOperation$/;"	c
+Executer	index.php	/^class Executer implements ExecuterInterface$/;"	c
+ExecuterInterface	index.php	/^interface ExecuterInterface$/;"	i
+FeedQueryUseByXpath	class/dom-class.php	/^class FeedQueryUseByXpath$/;"	c
+FeedUrlUseByHtmlBody	class/dom-class.php	/^class FeedUrlUseByHtmlBody$/;"	c
+GetDividedWordFromDom	class/getdividedwordfromdom-class.php	/^class GetDividedWordFromDom implements GetValueInterface$/;"	c
+GetDividedWordFromDom	class/getdividedwordfromdom-class.php	/^class GetDividedWordFromDom$/;"	c
+GetDividedWordFromDomTest	tests/getdividedwordfromdomTest.php	/^class GetDividedWordFromDomTest extends PHPUnit_Framework_TestCase$/;"	c
+GetDomFromXpathDom	class/dom-class.php	/^class GetDomFromXpathDom$/;"	c
+GetDomFromXpathDomTest	tests/getdomfromxpathdomTest.php	/^class GetDomFromXpathDomTest extends PHPUnit_Framework_TestCase$/;"	c
+GetDomTest	tests/getdomTest.php	/^class GetDomTest extends PHPUnit_Framework_TestCase$/;"	c
+GetValueInterface	index.php	/^interface GetValueInterface$/;"	i
+HtmlBody	class/dom-class.php	/^class HtmlBody$/;"	c
+HtmlBodyTest	tests/htmlBodyTest.php	/^class HtmlBodyTest extends PHPUnit_Framework_TestCase$/;"	c
+InsertDictionary	class/insertdictonary-class.php	/^class InsertDictionary extends Executer$/;"	c
+InsertDictionary	class/insertdictonary-class.php	/^class InsertDictionary extends InsertExecuter$/;"	c
+InsertDictionary	etc/tedwordclass.php	/^class InsertDictionary$/;"	c
+InsertExecute	class/db-class.php	/^interface InsertExecute$/;"	i
+InsertExecuter	class/db-class.php	/^class InsertExecuter implements InsertExecute$/;"	c
+SelctSql	class/db-class.php	/^class SelctSql$/;"	c
+SelectWords	class/selectwords-class.php	/^class SelectWords extends Executer $/;"	c
+SelectWords	class/selectwords-class.php	/^class SelectWords$/;"	c
+SessionLoad	tedenword.vim	/^let SessionLoad = 1$/;"	v
+WordRepair	class/selectwords-class.php	/^class WordRepair {$/;"	c
+[[	tedenword.vim	/^nnoremap <buffer> <silent> [[ ?\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)?$/;"	m
+[[	tedenword.vim	/^onoremap <buffer> <silent> [[ ?\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)?$/;"	m
+\_	tedenword.vim	/^nmap \\_  <Plug>TComment_\\_ $/;"	m
+\_	tedenword.vim	/^omap \\_  <Plug>TComment_\\_ $/;"	m
+\__	tedenword.vim	/^nmap \\__ <Plug>TComment_\\__$/;"	m
+\__	tedenword.vim	/^omap \\__ <Plug>TComment_\\__$/;"	m
+\_a	tedenword.vim	/^nmap \\_a <Plug>TComment_\\_a$/;"	m
+\_a	tedenword.vim	/^omap \\_a <Plug>TComment_\\_a$/;"	m
+\_b	tedenword.vim	/^nmap \\_b <Plug>TComment_\\_b$/;"	m
+\_b	tedenword.vim	/^omap \\_b <Plug>TComment_\\_b$/;"	m
+\_n	tedenword.vim	/^nmap \\_n <Plug>TComment_\\_n$/;"	m
+\_n	tedenword.vim	/^omap \\_n <Plug>TComment_\\_n$/;"	m
+\_p	tedenword.vim	/^nmap \\_p <Plug>TComment_\\_p$/;"	m
+\_p	tedenword.vim	/^omap \\_p <Plug>TComment_\\_p$/;"	m
+\_r	tedenword.vim	/^nmap \\_r <Plug>TComment_\\_r$/;"	m
+\_r	tedenword.vim	/^omap \\_r <Plug>TComment_\\_r$/;"	m
+\_s	tedenword.vim	/^nmap \\_s <Plug>TComment_\\_s$/;"	m
+\_s	tedenword.vim	/^omap \\_s <Plug>TComment_\\_s$/;"	m
+\ig	tedenword.vim	/^nmap <silent> \\ig <Plug>IndentGuidesToggle$/;"	m
+\pcd	tedenword.vim	/^nnoremap <silent> \\pcd :call PhpCsFixerFixDirectory()$/;"	m
+\pcf	tedenword.vim	/^nnoremap <silent> \\pcf :call PhpCsFixerFixFile()$/;"	m
+]]	tedenword.vim	/^nnoremap <buffer> <silent> ]] \/\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)\/$/;"	m
+]]	tedenword.vim	/^onoremap <buffer> <silent> ]] \/\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)\/$/;"	m
+__construct	class/db-class.php	/^    public function __construct($query, ExecuterInterface $executer)$/;"	f
+__construct	class/db-class.php	/^    public function __construct($query, InsertExecute $executer)$/;"	f
+__construct	class/db-class.php	/^    public function __construct(ExecuterInterface $executer,  $valueObj)$/;"	f
+__construct	class/db-class.php	/^   function __construct()$/;"	f
+__construct	class/dom-class.php	/^    public function __construct($html)$/;"	f
+__construct	class/dom-class.php	/^    public function __construct($query)$/;"	f
+__construct	class/dom-class.php	/^    public function __construct($url)$/;"	f
+__construct	class/dom-class.php	/^    public function __construct($url,$query)$/;"	f
+__construct	class/dom-class.php	/^    public function __construct($xPathObj, $query)$/;"	f
+__construct	class/getdividedwordfromdom-class.php	/^    public function __construct($url, $query)$/;"	f
+__construct	class/selectwords-class.php	/^    public function __construct()$/;"	f
+__construct	etc/tedwordclass.php	/^    public function __construct()$/;"	f
+__get	class/dom-class.php	/^    public function __get($name)$/;"	f
+__get	class/dom-class.php	/^    public function __get($url)$/;"	f
+arrayElimi	class/getdividedwordfromdom-class.php	/^        $arrayElimi = $array;$/;"	v
+arrayElimi2	class/getdividedwordfromdom-class.php	/^        $arrayElimi2 = $this->arraySerchAndUnset$/;"	v
+arrayElimi3	class/getdividedwordfromdom-class.php	/^        $arrayElimi3 = array_filter($arrayElimi2, "strlen");$/;"	v
+arrayElimi4	class/getdividedwordfromdom-class.php	/^        $arrayElimi4 = array_values($arrayElimi3);$/;"	v
+arrayElimiCount	class/getdividedwordfromdom-class.php	/^        $arrayElimiCount = count($arrayElimi);$/;"	v
+arrayRebuilding	class/getdividedwordfromdom-class.php	/^    public function arrayRebuilding($words)$/;"	f
+arraySerchAndUnset	class/getdividedwordfromdom-class.php	/^    public function arraySerchAndUnset($arrayElimi, $unsetWords)$/;"	f
+bb	tedenword.vim	/^nnoremap bb :bnext$/;"	m
+bb	tedenword.vim	/^onoremap bb :bnext$/;"	m
+classDir	class/classes.php	/^$classDir = dirname(__FILE__);$/;"	v
+classOpetathingDB	tests/classoperatingdbTest.php	/^        $this->classOpetathingDB = new ClassOperatingDB();$/;"	v
+classOpetathingDB	tests/classoperatingdbTest.php	/^    protected $classOpetathingDB;$/;"	v
+compileClass	tests/compilclassTest.php	/^        $this->compileClass = $/;"	v
+compileClass	tests/compilclassTest.php	/^    protected $compileClass;$/;"	v
+count	class/db-class.php	/^        $count = count($this->placeHolderArray);$/;"	v
+countValueArray	class/selectwords-class.php	/^        $countValueArray = count($valueArray);$/;"	v
+data	tests/compilclassTest.php	/^        $this->data = $/;"	v
+data	tests/compilclassTest.php	/^    protected $data;$/;"	v
+data	tests/getdividedwordfromdomTest.php	/^        $this->data = new Data();$/;"	v
+data	tests/getdividedwordfromdomTest.php	/^    protected $data;$/;"	v
+data	tests/getdomTest.php	/^        $this->data = new Data;$/;"	v
+data	tests/getdomTest.php	/^    protected $data;$/;"	v
+data	tests/getdomfromxpathdomTest.php	/^        $this->data = new Data();$/;"	v
+data	tests/getdomfromxpathdomTest.php	/^    protected $data;$/;"	v
+data	tests/htmlBodyTest.php	/^        $this->data = new Data();$/;"	v
+data	tests/htmlBodyTest.php	/^    protected $data;$/;"	v
+db	class/db-class.php	/^        $this->db = new ClassOperatingDB();$/;"	v
+db	class/db-class.php	/^    private $db;$/;"	v
+db	class/selectwords-class.php	/^        $this->db = new ClassOperatingDB(); $/;"	v
+db	class/selectwords-class.php	/^    private $db;$/;"	v
+db	etc/tedwordclass.php	/^        $this->db = new ClassOperatingDB();$/;"	v
+db	etc/tedwordclass.php	/^    private $db;$/;"	v
+dbhandle	class/db-class.php	/^        $dbhandle = $/;"	v
+dbhandle	class/db-class.php	/^        $this->dbhandle = $dbhandle;$/;"	v
+dbhandle	class/db-class.php	/^   private $dbhandle;$/;"	v
+dividedWordArray	class/getdividedwordfromdom-class.php	/^            $dividedWordArray = array_merge$/;"	v
+dividedWordArray	class/getdividedwordfromdom-class.php	/^        $dividedWordArray = array();$/;"	v
+document.onmouseup	adminer422.php	/^document.onmouseup = function (ev) {$/;"	j
+dom	class/dom-class.php	/^        $this->dom           = new GetDomFromXpathDom($this->xPathObj->xPathObj, $this->query);$/;"	v
+dom	class/dom-class.php	/^    private $dom;$/;"	v
+dom	class/getdividedwordfromdom-class.php	/^        $this->dom = new CompileClass($url, $query);$/;"	v
+dom	class/getdividedwordfromdom-class.php	/^    private $dom;$/;"	v
+domDoc	class/dom-class.php	/^        $domDoc = new DOMDocument();$/;"	v
+emptyResult	class/selectwords-class.php	/^    public function emptyResult($result)$/;"	f
+enword	class/insertdictonary-class.php	/^                    $enword = str_replace$/;"	v
+enword	etc/tedwordclass.php	/^                    $enword = str_replace$/;"	v
+examineResult	class/selectwords-class.php	/^    public function examineResult($result)$/;"	f
+execute	class/selectwords-class.php	/^    public function execute($varNameArray, $sqlpre, $value)$/;"	f
+execute	index.php	/^    public function execute($varNameArray, $sqlpre,  $value)$/;"	f
+execute	index.php	/^    public function execute($varNameArray, $sqlpre, $value);$/;"	f
+executer	class/cannottranslation-class.php	/^    public function executer($query)$/;"	f
+executer	class/cannottranslation-class.php	/^    public function executer($varNameArray, $sqlpre)$/;"	f
+executer	class/cannottranslation-class.php	/^    public function executer($varNameArray, $sqlpre, $value)$/;"	f
+executer	class/db-class.php	/^        $this->executer = $executer;$/;"	v
+executer	class/db-class.php	/^    private $executer;$/;"	v
+executer	class/db-class.php	/^    public function executer($varNameArray, $sqlpre)$/;"	f
+executer	class/db-class.php	/^    public function executer();$/;"	f
+executer	class/insertdictonary-class.php	/^    public function executer($varNameArray, $sqlpre)$/;"	f
+executer	class/insertdictonary-class.php	/^    public function executer($varNameArray, $sqlpre, $value)$/;"	f
+executer	class/insertdictonary-class.php	/^    public function executer()$/;"	f
+executer	class/selectwords-class.php	/^    public function executer($varNameArray, $sqlpre)$/;"	f
+executer	index.php	/^    public function executer($varNameArray, $sqlpre)$/;"	f
+executer	index.php	/^    public function executer($varNameArray, $sqlpre);$/;"	f
+g<	tedenword.vim	/^nmap <silent> g< <Plug>TComment_Uncomment$/;"	m
+g<b	tedenword.vim	/^nmap <silent> g<b <Plug>TComment_Uncommentb$/;"	m
+g<c	tedenword.vim	/^nmap <silent> g<c <Plug>TComment_Uncommentc$/;"	m
+g>	tedenword.vim	/^nmap <silent> g> <Plug>TComment_Comment$/;"	m
+g>b	tedenword.vim	/^nmap <silent> g>b <Plug>TComment_Commentb$/;"	m
+g>c	tedenword.vim	/^nmap <silent> g>c <Plug>TComment_Commentc$/;"	m
+gc	tedenword.vim	/^nmap <silent> gc <Plug>TComment_gc$/;"	m
+gc1	tedenword.vim	/^nmap <silent> gc1 <Plug>TComment_gc1$/;"	m
+gc1c	tedenword.vim	/^nmap <silent> gc1c <Plug>TComment_gc1c$/;"	m
+gc2	tedenword.vim	/^nmap <silent> gc2 <Plug>TComment_gc2$/;"	m
+gc2c	tedenword.vim	/^nmap <silent> gc2c <Plug>TComment_gc2c$/;"	m
+gc3	tedenword.vim	/^nmap <silent> gc3 <Plug>TComment_gc3$/;"	m
+gc3c	tedenword.vim	/^nmap <silent> gc3c <Plug>TComment_gc3c$/;"	m
+gc4	tedenword.vim	/^nmap <silent> gc4 <Plug>TComment_gc4$/;"	m
+gc4c	tedenword.vim	/^nmap <silent> gc4c <Plug>TComment_gc4c$/;"	m
+gc5	tedenword.vim	/^nmap <silent> gc5 <Plug>TComment_gc5$/;"	m
+gc5c	tedenword.vim	/^nmap <silent> gc5c <Plug>TComment_gc5c$/;"	m
+gc6	tedenword.vim	/^nmap <silent> gc6 <Plug>TComment_gc6$/;"	m
+gc6c	tedenword.vim	/^nmap <silent> gc6c <Plug>TComment_gc6c$/;"	m
+gc7	tedenword.vim	/^nmap <silent> gc7 <Plug>TComment_gc7$/;"	m
+gc7c	tedenword.vim	/^nmap <silent> gc7c <Plug>TComment_gc7c$/;"	m
+gc8	tedenword.vim	/^nmap <silent> gc8 <Plug>TComment_gc8$/;"	m
+gc8c	tedenword.vim	/^nmap <silent> gc8c <Plug>TComment_gc8c$/;"	m
+gc9	tedenword.vim	/^nmap <silent> gc9 <Plug>TComment_gc9$/;"	m
+gc9c	tedenword.vim	/^nmap <silent> gc9c <Plug>TComment_gc9c$/;"	m
+gcb	tedenword.vim	/^nmap <silent> gcb <Plug>TComment_gcb$/;"	m
+gcc	tedenword.vim	/^nmap <silent> gcc <Plug>TComment_gcc$/;"	m
+getDbhandle	class/db-class.php	/^   function getDbhandle()$/;"	f
+getDividedWordFromDom	tests/getdividedwordfromdomTest.php	/^        $this->getDividedWordFromDom = $/;"	v
+getDividedWordFromDom	tests/getdividedwordfromdomTest.php	/^    protected $getDividedWordFromDom;$/;"	v
+getDom	class/dom-class.php	/^class getDom$/;"	c
+getDom	tests/compilclassTest.php	/^        $this->getDom = $/;"	v
+getDom	tests/compilclassTest.php	/^    protected $getDom;$/;"	v
+getDom	tests/getdomTest.php	/^        $this->getDom = new GetDom($this->htmlBody->html);$/;"	v
+getDom	tests/getdomTest.php	/^    protected $getDom;$/;"	v
+getDom	tests/getdomfromxpathdomTest.php	/^        $this->getDom = new GetDom($this->htmlBody->html);$/;"	v
+getDom	tests/getdomfromxpathdomTest.php	/^    protected $getDom;$/;"	v
+getDomFormXpathDom	tests/compilclassTest.php	/^    protected $getDomFormXpathDom;$/;"	v
+getDomFormXpathDom	tests/getdomfromxpathdomTest.php	/^    protected $getDomFormXpathDom;$/;"	v
+getDomFromXpathDom	tests/compilclassTest.php	/^        $this->getDomFromXpathDom = $/;"	v
+getDomFromXpathDom	tests/getdomfromxpathdomTest.php	/^        $this->getDomFromXpathDom = new GetDomFromXpathDom($this->getDom->xPathObj, $this->data->query);$/;"	v
+getResult	class/selectwords-class.php	/^    public function getResult()$/;"	f
+getValue	class/getdividedwordfromdom-class.php	/^    public function getValue()$/;"	f
+getValue	index.php	/^    public function getValue();$/;"	f
+getValueByNumber	class/getdividedwordfromdom-class.php	/^    public function getValueByNumber($number)$/;"	f
+getWords	class/getdividedwordfromdom-class.php	/^    public function getWords()$/;"	f
+getWordsByNumber	class/getdividedwordfromdom-class.php	/^    public function getWordsByNumber($number)$/;"	f
+gx	tedenword.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
+handle	class/insertdictonary-class.php	/^        $handle = fopen("gene-utf8.txt", "r");$/;"	v
+handle	etc/tedwordclass.php	/^        $handle = fopen("gene-utf8.txt", "r");$/;"	v
+html	class/dom-class.php	/^        $this->html = file_get_contents($url);$/;"	v
+html	class/dom-class.php	/^    private $html;$/;"	v
+htmlBody	tests/compilclassTest.php	/^        $this->htmlBody = $/;"	v
+htmlBody	tests/compilclassTest.php	/^    protected $htmlBody;$/;"	v
+htmlBody	tests/getdomTest.php	/^        $this->htmlBody = new HtmlBody($this->data->url);$/;"	v
+htmlBody	tests/getdomTest.php	/^    protected $htmlBody;$/;"	v
+htmlBody	tests/getdomfromxpathdomTest.php	/^        $this->htmlBody = new HtmlBody($this->data->url);$/;"	v
+htmlBody	tests/getdomfromxpathdomTest.php	/^    protected $htmlBody;$/;"	v
+htmlBody	tests/htmlBodyTest.php	/^        $this->htmlBody = new HtmlBody($this->data->url);$/;"	v
+htmlBody	tests/htmlBodyTest.php	/^    protected $htmlBody;$/;"	v
+htmlBodyObj	class/dom-class.php	/^        $this->htmlBodyObj   = new Htmlbody($this->url);$/;"	v
+htmlBodyObj	class/dom-class.php	/^    private $htmlBodyObj;$/;"	v
+i	class/db-class.php	/^            static $i = 0;$/;"	v
+i	class/db-class.php	/^           static $i = 0;$/;"	v
+i	class/insertdictonary-class.php	/^                static $i = 1;$/;"	v
+i	class/selectwords-class.php	/^           static $i = 0;$/;"	v
+i	etc/tedwordclass.php	/^                static $i = 1;$/;"	v
+i	index.php	/^           static $i = 0;$/;"	v
+i	index.php	/^    static $i = 0;$/;"	v
+ic	tedenword.vim	/^omap ic <Plug>TComment_ic$/;"	m
+inspectEven	class/insertdictonary-class.php	/^    private function inspectEven($number)$/;"	f
+inspectEven	etc/tedwordclass.php	/^    private function inspectEven($number)$/;"	f
+j	class/insertdictonary-class.php	/^                static $j = 0;$/;"	v
+j	etc/tedwordclass.php	/^                static $j = 0;$/;"	v
+jj	tedenword.vim	/^inoremap jj $/;"	m
+matchArray	class/db-class.php	/^            $matchArray = $item;$/;"	v
+matchArray	class/db-class.php	/^        static $matchArray = array();$/;"	v
+matchreturn	class/selectwords-class.php	/^            $matchreturn === 0 ||$/;"	v
+matchreturn	class/selectwords-class.php	/^            $matchreturn === false$/;"	v
+matchreturn	class/selectwords-class.php	/^        $matchreturn = preg_match($pattern, $word, $match); $/;"	v
+message	tests/getdividedwordfromdomTest.php	/^                $message='htmlBody is Empty'$/;"	v
+mod	class/insertdictonary-class.php	/^        $mod = $number % 2;$/;"	v
+mod	etc/tedwordclass.php	/^        $mod = $number % 2;$/;"	v
+notresult	class/selectwords-class.php	/^           $notresult = new DbGenericOperation();$/;"	v
+onmouseup	adminer422.php	/^document.onmouseup = function (ev) {$/;"	j
+op	index.php	/^$op = new DbGenericOperation(new SelectWords(), $wordArray);$/;"	v
+pattern	class/db-class.php	/^        $pattern = '\/:[a-zA-z]+\/';$/;"	v
+pattern	class/selectwords-class.php	/^        $pattern = '\/^I|[A-Z]{2,}\/';$/;"	v
+placeHoderArray	class/db-class.php	/^        $this->placeHoderArray = $matchArray;$/;"	v
+placeHoderArray	class/db-class.php	/^        $this->placeHoderArray = $this->queryInterpretation($query);$/;"	v
+placeHolderArray	class/db-class.php	/^    private $placeHolderArray;$/;"	v
+purposeDom	class/dom-class.php	/^        $this->purposeDom = $xPathObj->query($query);$/;"	v
+purposeDom	class/dom-class.php	/^    private $purposeDom;$/;"	v
+query	class/cannottranslation-class.php	/^$query = $/;"	v
+query	class/dom-class.php	/^        $this->query         = $query;$/;"	v
+query	class/dom-class.php	/^        $this->query = $query;$/;"	v
+query	class/dom-class.php	/^    private $query;$/;"	v
+query	class/selectwords-class.php	/^           $query = $/;"	v
+query	index.php	/^$query = 'body\/\/div[@class="talk-article__body talk-transcript__body"]\/\/span';$/;"	v
+queryInterpretation	class/db-class.php	/^    public function queryInterpretation($query)$/;"	f
+repairWord	class/selectwords-class.php	/^            $repairWord = $word;$/;"	v
+repairWord	class/selectwords-class.php	/^            $repairWord = strtolower($word);$/;"	v
+repairWord	class/selectwords-class.php	/^        $repairWord = ($word);$/;"	v
+result	class/db-class.php	/^        $this->result =$/;"	v
+result	class/db-class.php	/^    private $result;$/;"	v
+result	class/selectwords-class.php	/^            $result = $this->examineResult($sqlpre->fetchAll());$/;"	v
+result	class/selectwords-class.php	/^            static $result = array();$/;"	v
+result	class/selectwords-class.php	/^        $this->result = $sqlpre->fetchAll();$/;"	v
+result	class/selectwords-class.php	/^    private $result;$/;"	v
+runSql	class/db-class.php	/^    public function runSql($query)$/;"	f
+s:cpo_save	tedenword.vim	/^let s:cpo_save=&cpo$/;"	v
+s:l	tedenword.vim	/^let s:l = 15 - ((14 * winheight(0) + 18) \/ 36)$/;"	v
+s:l	tedenword.vim	/^let s:l = 16 - ((15 * winheight(0) + 18) \/ 36)$/;"	v
+s:l	tedenword.vim	/^let s:l = 17 - ((16 * winheight(0) + 18) \/ 36)$/;"	v
+s:l	tedenword.vim	/^let s:l = 79 - ((5 * winheight(0) + 18) \/ 36)$/;"	v
+s:so_save	tedenword.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
+s:sx	tedenword.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
+s:wipebuf	tedenword.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
+selctWordFunc	class/selectwords-class.php	/^    public function selctWordFunc($sql, $word)$/;"	f
+selctobj	index.php	/^$selctobj = new SelectWords();$/;"	v
+selectTranswordByEnWord	class/db-class.php	/^    static function selectTranswordByEnWord()$/;"	f
+setUP	tests/classoperatingdbTest.php	/^    protected function setUP()$/;"	f
+setUP	tests/compilclassTest.php	/^    protected function setUP()$/;"	f
+setUP	tests/getdividedwordfromdomTest.php	/^    protected function setUP()$/;"	f
+setUP	tests/getdomTest.php	/^    protected function setUP()$/;"	f
+setUP	tests/getdomfromxpathdomTest.php	/^    protected function setUP()$/;"	f
+setUP	tests/htmlBodyTest.php	/^    protected function setUP()$/;"	f
+sql	class/db-class.php	/^        $sql = $/;"	v
+sqlpre	class/db-class.php	/^        $this->sqlpre = $this->db->getDbhandle()->prepare($query);$/;"	v
+sqlpre	class/db-class.php	/^    private $sqlpre;$/;"	v
+sqlpre	class/selectwords-class.php	/^        $sqlpre = $this->db->getDbhandle()->prepare$/;"	v
+sqlpre	etc/tedwordclass.php	/^        $sqlpre = $/;"	v
+testClassOpetatingDBCostruct	tests/classoperatingdbTest.php	/^    public function testClassOpetatingDBCostruct()$/;"	f
+testCompileClassConstruct	tests/compilclassTest.php	/^    public function testCompileClassConstruct()$/;"	f
+testGetDividedWordFromDomConstruct	tests/getdividedwordfromdomTest.php	/^    public function testGetDividedWordFromDomConstruct()$/;"	f
+testGetDomConstruct	tests/getdomTest.php	/^    public function testGetDomConstruct()$/;"	f
+testGetDomFromXpathDomConstruct	tests/getdomfromxpathdomTest.php	/^    public function testGetDomFromXpathDomConstruct()$/;"	f
+testHtmlBodyConstruct	tests/htmlBodyTest.php	/^    public function testHtmlBodyConstruct()$/;"	f
+transword	class/insertdictonary-class.php	/^                    $transword = str_replace$/;"	v
+transword	etc/tedwordclass.php	/^                    $transword = str_replace$/;"	v
+tt	tedenword.vim	/^nnoremap tt :bprevious$/;"	m
+tt	tedenword.vim	/^onoremap tt :bprevious$/;"	m
+unnecessaryElements	class/getdividedwordfromdom-class.php	/^    public function unnecessaryElements($array)$/;"	f
+unsetWordsCount	class/getdividedwordfromdom-class.php	/^        $unsetWordsCount = count($unsetWords);$/;"	v
+unsetwords	class/getdividedwordfromdom-class.php	/^        $unsetwords = array$/;"	v
+url	class/dom-class.php	/^        $this->url           = $url;$/;"	v
+url	class/dom-class.php	/^        $this->url = $url;$/;"	v
+url	class/dom-class.php	/^    private $url;$/;"	v
+url	index.php	/^$url = 'http:\/\/www.ted.com\/talks\/shawn_achor_the_happy_secret_to_better_work\/transcript?language=en';$/;"	v
+value	class/db-class.php	/^        $this->value = $valueObj;$/;"	v
+value	class/getdividedwordfromdom-class.php	/^        $this->value = $dividedWordArray;$/;"	v
+value	class/getdividedwordfromdom-class.php	/^    private $value;$/;"	v
+valueArray	class/selectwords-class.php	/^        $valueArray = $value->getValue();$/;"	v
+valueObj	class/db-class.php	/^    private $valueObj;$/;"	v
+varName	class/db-class.php	/^                $varName = preg_replace("\/:\/", "", $this->placeHoderArray[$i]);$/;"	v
+varName	class/db-class.php	/^        $varName = array();$/;"	v
+varNameArray	class/db-class.php	/^        $this->varNameArray = $/;"	v
+varNameArray	class/db-class.php	/^        $this->varNameArray = $varName;$/;"	v
+varNameArray	class/db-class.php	/^    private $varNameArray;$/;"	v
+varNameForPlaceHolder	class/db-class.php	/^    public function varNameForPlaceHolder($placeHolderArray)$/;"	f
+varNameForPlaceHolder	class/db-class.php	/^    public function varNameForPlaceHolder()$/;"	f
+wordArray	index.php	/^$wordArray = new GetDividedWordFromDom($url, $query);$/;"	v
+wordFirstUpperCaseRepair	class/selectwords-class.php	/^    static function wordFirstUpperCaseRepair ($word)$/;"	f
+words	class/getdividedwordfromdom-class.php	/^        $this->words = $dividedWordArray;$/;"	v
+words	class/getdividedwordfromdom-class.php	/^    private $words;$/;"	v
+wordsArray	class/getdividedwordfromdom-class.php	/^        $wordsArray = preg_split$/;"	v
+xPathObj	class/dom-class.php	/^        $this->xPathObj      = new GetDom($this->htmlBodyObj->html);$/;"	v
+xPathObj	class/dom-class.php	/^        $this->xPathObj = new DOMXpath($domDoc);$/;"	v
+xPathObj	class/dom-class.php	/^    private $xPathObj;$/;"	v
+zt	tedenword.vim	/^normal! zt$/;"	m

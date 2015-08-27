@@ -42,13 +42,7 @@ class SelctSql
     }
 
 }
-/**
- * executerのインターフェース
- */
-interface InsertExecute
-{
-    public function executer();
-}
+
 /**
  * DBへの汎用操作クラス
  */
@@ -58,58 +52,72 @@ class DbGenericOperation
     private $placeHolderArray;
     private $db;
     private $sqlpre;
+    private $result;
+    private $valueObj;
+    private $executer;
+
+    public function __construct(ExecuterInterface $executer,  $valueObj)
+    {
+        $this->executer = $executer;
+        $this->value = $valueObj;
+    }
     /**
      * クエリのプレースフォルダを解析する
      */
     public function queryInterpretation($query)
     {
         $pattern = '/:[a-zA-z]+/';
+        static $matchArray = array();
         preg_match_all($pattern, $query, $match);
-        return $match;
+        foreach ($match as $item) {
+            $matchArray = $item;
+        }
+        $this->placeHolderArray = $matchArray;
     }
     /**
      * プレースホルダからデータバインド用の変数名を作る
      */
-    public function varNameForPlaceHolder($placeHolderArray)
+    public function varNameForPlaceHolder()
     {
         $varName = array();
-        foreach ($placeHolderArray as $item){
-            array_push($varName, preg_replace(":", "", $item));
+        $count = count($this->placeHolderArray);
+        for ($i=0; $i < $count; $i++) {
+            $varName[] = preg_replace
+                ("/:/", "", $this->placeHolderArray[$i]);
         }
-        return $varName;
+        $this->varNameArray = $varName;
     }
     /**
-     * クエリとexecuterを与えてインサートを実行する
+     * クエリとexecuterを与えて実行する
      */
-    public function __construct($query, InsertExecute $executer)
+    public function runSql($query)
     {
-        $this->placeHoderArray = $this->queryInterpretation($query);
-        $this->varNameArray = 
-            $this->varNameForPlaceHolder($this->placeHoderArray);
+        $this->queryInterpretation($query);
+        $this->varNameForPlaceHolder();
         $this->db = new ClassOperatingDB();
         $this->sqlpre = $this->db->getDbhandle()->prepare($query);
-        foreach ($this->varNameArray as $item) {
-            static $i = 0;
-            $this->sqlpre->bindParam($item,$$this->varNameArray[$i]);
-            $i++;
-         }
-        $executer->executer($this->varNameArray, $this->sqlpre);
-    }
-}
-/**
- * executerの原型
- */
-class InsertExecuter implements InsertExecute
-{
-    public function executer($varNameArray, $sqlpre)
-    {
-        foreach ($varNameArray as $item) {
-           static $i = 0;
-           $$varNameArray[$i] = $value;
-           $i++;
+        $count = count($this->placeHolderArray);
+        //todo 以下の箇所直し中注意
+        for ($i=0; $i < $count; $i++) {
+            $varName = (string)$this->varNameArray[$i];
+            var_dump($this->varNameArray);
+            $this->sqlpre->bindValue
+                (
+                    $this->placeHolderArray[$i],
+                    $varName
+                );
         }
-        $sqlpre->execute(); 
+        $this->sqlpre->debugDumpParams();
+        $this->result =
+            $this->executer->execute
+            (
+                $this->varNameArray,
+                $this->sqlpre,
+                $this->value->getValue(),
+                $this->placeHolderArray
+            );
     }
 }
+
 
 

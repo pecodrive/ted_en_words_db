@@ -5,39 +5,37 @@
  *
  *
  */
-class SelectWords
+class SelectWords extends Executer 
 {
-    private $db;
-    private $result;
-    public function __construct()
+    public function execute($varNameArray, $sqlpre, $value, $placeHolderArray)
     {
-        $this->db = new ClassOperatingDB(); 
-    }
-    public function selctWordFunc($sql, $word)
-    {
-        $repairWord = ($word);
-        $sqlpre = $this->db->getDbhandle()->prepare
-            (
-                $sql
-            );
-        $sqlpre->bindParam( ':word', $word); 
-        $sqlpre->execute();
-        $this->result = $sqlpre->fetchAll();
-    }
-    public function getResult()
-    {
-        return $this->emptyResult($this->result);
-    }
-    public function emptyResult($result)
-    {
-        if(empty($this->result)){
-            return "翻訳できませんでした(辞書の都合上,複数形や進行形などの変化形は翻訳できません）";
+        //todo データバインドの方法を変える以下がんばれ
+        $countValueArray = count($value);
+        $countVarNameArray = count($varNameArray);
+        for ($i=0; $i < $countValueArray; $i++) {
+            for($j=0; $j < $countVarNameArray; $j++) {
+                $varName = (string)$varNameArray[$j];
+                $sqlpre->bindParam
+                    (
+                        $placeHolderArray[$i],
+                        $varName
+                    );
+               $$varNameArray[$j] = $value[$i];
+            }
+            $sqlpre->execute();
+            $result[] = $this->examineResult($sqlpre->fetchAll());
         }
-        return $this->result[0]["transword"];
+        return $result;
+    }
+    public function examineResult($result)
+    {
+        if(empty($result)){
+            echo "NO result";
+        }
+        return $result;
     }
 }
 class WordRepair {
-    
     static function wordFirstUpperCaseRepair ($word)
     {
         $pattern = '/^I|[A-Z]{2,}/';

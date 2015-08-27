@@ -3,7 +3,7 @@
  * データベースに英和辞典を突っ込む
  * 
  */
-class InsertDictionary extends InsertExecuter 
+class InsertDictionary extends Executer
 {
     /**
      * 偶数なの？ 
@@ -20,7 +20,7 @@ class InsertDictionary extends InsertExecuter
             return false;
         }
     }
-    public function executer()
+    public function executer($varNameArray, $sqlpre, $value)
     {
         $handle = fopen("gene-utf8.txt", "r");
         if ($handle){

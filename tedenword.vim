@@ -84,6 +84,7 @@ map p <Plug>TComment_p
 vmap  <Plug>TComment_
 omap  <Plug>TComment_
 noremap  rt :bprevious
+noremap  r :bnext
 noremap  cl :lcd %:h
 noremap  cd :cd
 noremap  p :pwd
@@ -94,7 +95,7 @@ noremap  1 :q!
 noremap  q :q
 noremap  a :qa
 noremap  ! :! 
-noremap  r :bnext
+noremap  wa :wa
 noremap  w :w
 omap \__ <Plug>TComment_\__
 nmap \__ <Plug>TComment_\__
@@ -132,6 +133,10 @@ xmap \__ <Plug>TComment_\__
 smap \__ <Plug>TComment_\__
 nnoremap <silent> \pcf :call PhpCsFixerFixFile()
 nnoremap <silent> \pcd :call PhpCsFixerFixDirectory()
+onoremap bb :bnext
+xnoremap bb :bnext
+nnoremap bb :bnext
+snoremap bb :bnext
 nmap gx <Plug>NetrwBrowseX
 xmap g> <Plug>TComment_Comment
 nmap <silent> g>b <Plug>TComment_Commentb
@@ -166,6 +171,10 @@ nmap <silent> gc <Plug>TComment_gc
 xmap ic <Plug>TComment_ic
 omap ic <Plug>TComment_ic
 smap ic <Plug>TComment_ic
+onoremap tt :bprevious
+xnoremap tt :bprevious
+nnoremap tt :bprevious
+snoremap tt :bprevious
 nnoremap <Plug>TComment_ :TComment
 snoremap <Plug>TComment_\__ :TComment
 nnoremap <Plug>TComment_\__ :TComment
@@ -327,12 +336,12 @@ endif
 set shortmess=aoO
 badd +8 class/classes.php
 badd +66 class/dom-class.php
-badd +6 class/insertdictonary-class.php
-badd +1 class/db-class.php
-badd +11 class/getdividedwordfromdom-class.php
-badd +48 class/selectwords-class.php
-badd +1 index.php
-badd +14 class/cannottranslation-class.php
+badd +11 class/insertdictonary-class.php
+badd +103 class/db-class.php
+badd +1 class/getdividedwordfromdom-class.php
+badd +12 class/selectwords-class.php
+badd +17 index.php
+badd +12 class/cannottranslation-class.php
 argglobal
 silent! argdel *
 argadd class/classes.php
@@ -342,7 +351,7 @@ argadd class/db-class.php
 argadd class/getdividedwordfromdom-class.php
 argadd class/selectwords-class.php
 argadd index.php
-edit class/cannottranslation-class.php
+edit class/selectwords-class.php
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -355,7 +364,7 @@ set winheight=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 75 + 75) / 150)
 exe 'vert 2resize ' . ((&columns * 74 + 75) / 150)
 argglobal
-edit class/cannottranslation-class.php
+edit class/selectwords-class.php
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
@@ -472,12 +481,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 16 - ((15 * winheight(0) + 18) / 36)
+let s:l = 12 - ((11 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 0
+12
+normal! 054|
 lcd ~/Documents/project/mounter/var/www/html/test
 wincmd w
 argglobal
@@ -598,12 +607,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 18) / 36)
+let s:l = 100 - ((14 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 012|
+100
+normal! 034|
 lcd ~/Documents/project/mounter/var/www/html/test
 wincmd w
 2wincmd w
