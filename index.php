@@ -39,5 +39,5 @@ $op = new DbGenericOperation(new SelectWords(), $wordArray);
     (
         "select transword from transwords where enword=:word"
     );
-
+var_dump($op);
 //var_dump($op);
